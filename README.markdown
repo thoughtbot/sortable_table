@@ -3,6 +3,8 @@ Sortable Table
 
 Thanks to Joe Ferris and Boston.rb.
 
+test
+
 Examples
 --------
 
