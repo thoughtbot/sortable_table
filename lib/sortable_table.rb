@@ -2,18 +2,27 @@ ActionView::Helpers::FormHelper.send(:include, SortableTable::ViewHelper)
 
 class ActionController::Base
   
-  def self.sanitizes_order(*args)
-    mappings = args.last.is_a?(Hash) ? args.pop : {}
+  def self.sortable_attributes(*args)
+    mappings           = args.last.is_a?(Hash) ? args.pop : {}
     acceptable_columns = args.collect(&:to_s) + mappings.keys.collect(&:to_s)
-    define_method(:sanitized_order) do 
-      direction =  params[:order] == 'ascending' ? 'asc' : 'desc'
-      column = params[:sort] || 'created_on'
-      if acceptable_columns.include? column
+    
+    define_method(:sort_order) do |*default| 
+      direction = params[:order] == 'ascending' ? 'asc' : 'desc'
+      column    = params[:sort] || 'created_on'
+      if params[:sort] && acceptable_columns.include?(column)
         column = mappings[column.to_sym] || column
         "#{column} #{direction}"
       else
-        sanitized_order acceptable_columns.first, 'descending'
+        "#{acceptable_columns.first} #{default_sort_direction(default)}"
       end
+    end
+  end
+  
+  def default_sort_direction(default)
+    if default.any? && default.first.is_a?(Hash) && default.first.has_key?(:default)
+      default.first[:default] == 'ascending' ? 'asc' : 'desc'
+    else
+      'desc'  
     end
   end
   
