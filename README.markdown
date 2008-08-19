@@ -40,4 +40,18 @@ Time-saving Shoulda macros for your tests:
 		
 		end
 
+And some sugar for your views:
+
+    %h1 Users
+
+		%table
+		  %tr
+		    = sortable_table_header :name => 'Name', :sort => 'name'
+		    = sortable_table_header :name => 'E-mail', :sort => 'email'
+
+		  - @users.each do |each|
+		    %tr
+		      %td= each.name
+		      %td= each.email
+
 Copyright (c) 2008 Dan Croak, released under the MIT license
