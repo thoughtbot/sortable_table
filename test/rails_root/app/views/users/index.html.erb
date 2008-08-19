@@ -1,0 +1,21 @@
+<h1>Users</h1>
+
+<table>
+  <tr>
+    <%= sortable_table_header :name => 'First Name', :sort => 'name', :title => 'Click to sort by name' %>
+    <th>Email</th>
+    <th>Admin</th>
+    <th>Age</th>
+    <th>Created On</th>
+  </tr>
+
+<% @users.each do |user| %>
+  <tr>
+    <td><%=h user.name %></td>
+    <td><%=h user.email %></td>
+    <td><%=h user.admin %></td>
+    <td><%=h user.age %></td>
+    <td><%=h user.created_at.to_s %></td>
+  </tr>
+<% end %>
+</table>

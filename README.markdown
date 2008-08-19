@@ -3,7 +3,10 @@ Sortable Table
 
 Thanks to Joe Ferris and Boston.rb.
 
-test
+Conventions
+-----------
+
+params[:sort] and params[:order]
 
 Examples
 --------

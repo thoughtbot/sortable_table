@@ -1,0 +1,15 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  name: MyString
+  email: MyString
+  born: 2008-08-19 18:50:20
+  admin: false
+  age: 1
+
+two:
+  name: MyString
+  email: MyString
+  born: 2008-08-19 18:50:20
+  admin: false
+  age: 1

@@ -1,4 +1,4 @@
-ActionView::Helpers::FormHelper.send(:include, SortableTable::ViewHelper)
+ActionView::Base.send(:include, SortableTable::ViewHelper)
 
 class ActionController::Base
   

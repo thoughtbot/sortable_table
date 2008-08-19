@@ -2,7 +2,7 @@ class Test::Unit::TestCase
   
   def self.should_sort_by(attribute, &block)
     collection = self.name.underscore.gsub(/_controller_test/, '')
-    collection.slice!(0..collection.rindex('/'))
+    collection.slice!(0..collection.rindex('/')) if collection.include?('/')
     collection = collection.to_sym
     model_name = collection.to_s.singularize.camelize.constantize
     block ||= attribute
