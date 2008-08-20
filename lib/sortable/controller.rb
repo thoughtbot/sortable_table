@@ -1,11 +1,9 @@
-ActionView::Base.send(:include, SortableTable::ViewHelper)
-
 class ActionController::Base
   
   def self.sortable_attributes(*args)
     mappings           = args.last.is_a?(Hash) ? args.pop : {}
     acceptable_columns = args.collect(&:to_s) + mappings.keys.collect(&:to_s)
-    
+  
     define_method(:sort_order) do |*default| 
       direction = params[:order] == 'ascending' ? 'asc' : 'desc'
       column    = params[:sort] || 'created_on'

@@ -2069,3 +2069,432 @@ Completed in 0.06510 (15 reqs/sec) | Rendering: 0.05299 (81%) | DB: 0.00302 (4%)
 [0m
   [4;35;1mSQL (0.000110)[0m   [0mSELECT version FROM "schema_migrations"[0m
   [4;36;1mSQL (0.001233)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20080819225020')[0m
+  [4;36;1mSQL (0.000558)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.000178)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.000158)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.000180)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.000230)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.000055)[0m   [0mPRAGMA index_list("users")[0m
+  [4;36;1mSQL (0.000180)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.000206)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.001465)[0m   [0;1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255) DEFAULT NULL NULL, "email" varchar(255) DEFAULT NULL NULL, "admin" boolean DEFAULT NULL NULL, "age" integer DEFAULT NULL NULL, "created_at" datetime DEFAULT NULL NULL, "updated_at" datetime DEFAULT NULL NULL) [0m
+  [4;35;1mSQL (0.000203)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.001156)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;35;1mSQL (0.001331)[0m   [0mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;36;1mSQL (0.000429)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.000102)[0m   [0mSELECT version FROM "schema_migrations"[0m
+  [4;36;1mSQL (0.001498)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20080819225020')[0m
+
+
+Processing UsersController#index (for 127.0.0.1 at 2008-08-19 22:36:20) [GET]
+  Session ID: 641ce81636c01587116aa95429f0b806
+  Parameters: {"action"=>"index", "controller"=>"users"}
+  [4;36;1mUser Load (0.002440)[0m   [0;1mSELECT * FROM "users" ORDER BY name desc[0m
+Rendering template within layouts/users
+Rendering users/index
+Completed in 0.04821 (20 reqs/sec) | Rendering: 0.03932 (81%) | DB: 0.00244 (5%) | 200 OK [http://localhost/users]
+
+
+Processing UsersController#index (for 127.0.0.1 at 2008-08-19 22:36:37) [GET]
+  Session ID: BAh7BiIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNo
+SGFzaHsABjoKQHVzZWR7AA==--20685813428b56b5182bd209614ad7246a05eba3
+  Parameters: {"action"=>"index", "controller"=>"users"}
+  [4;35;1mUser Load (0.002229)[0m   [0mSELECT * FROM "users" ORDER BY name desc[0m
+Rendering template within layouts/users
+Rendering users/index
+Completed in 0.01396 (71 reqs/sec) | Rendering: 0.00601 (43%) | DB: 0.00223 (15%) | 200 OK [http://localhost/users]
+
+
+Processing UsersController#index (for 127.0.0.1 at 2008-08-19 22:36:39) [GET]
+  Session ID: BAh7BiIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNo
+SGFzaHsABjoKQHVzZWR7AA==--20685813428b56b5182bd209614ad7246a05eba3
+  Parameters: {"order"=>"ascending", "action"=>"index", "controller"=>"users", "sort"=>"name", "page"=>"1"}
+  [4;36;1mUser Load (0.001974)[0m   [0;1mSELECT * FROM "users" ORDER BY name asc[0m
+Rendering template within layouts/users
+Rendering users/index
+Completed in 0.01301 (76 reqs/sec) | Rendering: 0.00551 (42%) | DB: 0.00197 (15%) | 200 OK [http://localhost/users?order=ascending&page=1&sort=name]
+
+
+Processing UsersController#index (for 127.0.0.1 at 2008-08-19 22:37:27) [GET]
+  Session ID: BAh7BiIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNo
+SGFzaHsABjoKQHVzZWR7AA==--20685813428b56b5182bd209614ad7246a05eba3
+  Parameters: {"order"=>"ascending", "action"=>"index", "controller"=>"users", "sort"=>"name", "page"=>"1"}
+  [4;35;1mUser Load (0.001997)[0m   [0mSELECT * FROM "users" ORDER BY name asc[0m
+Rendering template within layouts/users
+Rendering users/index
+Completed in 0.01317 (75 reqs/sec) | Rendering: 0.00559 (42%) | DB: 0.00200 (15%) | 200 OK [http://localhost/users?order=ascending&page=1&sort=name]
+
+
+Processing UsersController#index (for 127.0.0.1 at 2008-08-19 22:37:41) [GET]
+  Session ID: BAh7BiIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNo
+SGFzaHsABjoKQHVzZWR7AA==--20685813428b56b5182bd209614ad7246a05eba3
+  Parameters: {"order"=>"ascending", "action"=>"index", "controller"=>"users", "sort"=>"name", "page"=>"1"}
+  [4;36;1mUser Load (0.002176)[0m   [0;1mSELECT * FROM "users" ORDER BY name asc[0m
+Rendering template within layouts/users
+Rendering users/index
+Completed in 0.01429 (69 reqs/sec) | Rendering: 0.00608 (42%) | DB: 0.00218 (15%) | 200 OK [http://localhost/users?order=ascending&page=1&sort=name]
+
+
+Processing UsersController#index (for 127.0.0.1 at 2008-08-19 22:37:44) [GET]
+  Session ID: BAh7BiIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNo
+SGFzaHsABjoKQHVzZWR7AA==--20685813428b56b5182bd209614ad7246a05eba3
+  Parameters: {"order"=>"descending", "action"=>"index", "controller"=>"users", "sort"=>"name", "page"=>"1"}
+  [4;35;1mUser Load (0.001995)[0m   [0mSELECT * FROM "users" ORDER BY name desc[0m
+Rendering template within layouts/users
+Rendering users/index
+Completed in 0.01321 (75 reqs/sec) | Rendering: 0.00549 (41%) | DB: 0.00199 (15%) | 200 OK [http://localhost/users?order=descending&page=1&sort=name]
+
+
+Processing UsersController#index (for 127.0.0.1 at 2008-08-19 22:37:45) [GET]
+  Session ID: BAh7BiIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNo
+SGFzaHsABjoKQHVzZWR7AA==--20685813428b56b5182bd209614ad7246a05eba3
+  Parameters: {"order"=>"ascending", "action"=>"index", "controller"=>"users", "sort"=>"name", "page"=>"1"}
+  [4;36;1mUser Load (0.002075)[0m   [0;1mSELECT * FROM "users" ORDER BY name asc[0m
+Rendering template within layouts/users
+Rendering users/index
+Completed in 0.01381 (72 reqs/sec) | Rendering: 0.00575 (41%) | DB: 0.00207 (15%) | 200 OK [http://localhost/users?order=ascending&page=1&sort=name]
+
+
+Processing UsersController#index (for 127.0.0.1 at 2008-08-19 22:37:46) [GET]
+  Session ID: BAh7BiIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNo
+SGFzaHsABjoKQHVzZWR7AA==--20685813428b56b5182bd209614ad7246a05eba3
+  Parameters: {"order"=>"descending", "action"=>"index", "controller"=>"users", "sort"=>"name", "page"=>"1"}
+  [4;35;1mUser Load (0.002066)[0m   [0mSELECT * FROM "users" ORDER BY name desc[0m
+Rendering template within layouts/users
+Rendering users/index
+Completed in 0.01387 (72 reqs/sec) | Rendering: 0.00568 (40%) | DB: 0.00207 (14%) | 200 OK [http://localhost/users?order=descending&page=1&sort=name]
+
+
+Processing UsersController#index (for 127.0.0.1 at 2008-08-19 22:37:47) [GET]
+  Session ID: BAh7BiIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNo
+SGFzaHsABjoKQHVzZWR7AA==--20685813428b56b5182bd209614ad7246a05eba3
+  Parameters: {"order"=>"ascending", "action"=>"index", "controller"=>"users", "sort"=>"email", "page"=>"1"}
+  [4;36;1mUser Load (0.002113)[0m   [0;1mSELECT * FROM "users" ORDER BY users.email asc[0m
+Rendering template within layouts/users
+Rendering users/index
+Completed in 0.01372 (72 reqs/sec) | Rendering: 0.00574 (41%) | DB: 0.00211 (15%) | 200 OK [http://localhost/users?order=ascending&page=1&sort=email]
+
+
+Processing UsersController#index (for 127.0.0.1 at 2008-08-19 22:37:48) [GET]
+  Session ID: BAh7BiIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNo
+SGFzaHsABjoKQHVzZWR7AA==--20685813428b56b5182bd209614ad7246a05eba3
+  Parameters: {"order"=>"descending", "action"=>"index", "controller"=>"users", "sort"=>"email", "page"=>"1"}
+  [4;35;1mUser Load (0.001996)[0m   [0mSELECT * FROM "users" ORDER BY users.email desc[0m
+Rendering template within layouts/users
+Rendering users/index
+Completed in 0.01330 (75 reqs/sec) | Rendering: 0.00557 (41%) | DB: 0.00200 (15%) | 200 OK [http://localhost/users?order=descending&page=1&sort=email]
+
+
+Processing UsersController#index (for 127.0.0.1 at 2008-08-19 22:37:49) [GET]
+  Session ID: BAh7BiIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNo
+SGFzaHsABjoKQHVzZWR7AA==--20685813428b56b5182bd209614ad7246a05eba3
+  Parameters: {"order"=>"ascending", "action"=>"index", "controller"=>"users", "sort"=>"age", "page"=>"1"}
+  [4;36;1mUser Load (0.001980)[0m   [0;1mSELECT * FROM "users" ORDER BY age asc[0m
+Rendering template within layouts/users
+Rendering users/index
+Completed in 0.01333 (74 reqs/sec) | Rendering: 0.00559 (41%) | DB: 0.00198 (14%) | 200 OK [http://localhost/users?order=ascending&page=1&sort=age]
+
+
+Processing UsersController#index (for 127.0.0.1 at 2008-08-19 22:37:50) [GET]
+  Session ID: BAh7BiIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNo
+SGFzaHsABjoKQHVzZWR7AA==--20685813428b56b5182bd209614ad7246a05eba3
+  Parameters: {"order"=>"descending", "action"=>"index", "controller"=>"users", "sort"=>"age", "page"=>"1"}
+  [4;35;1mUser Load (0.002041)[0m   [0mSELECT * FROM "users" ORDER BY age desc[0m
+Rendering template within layouts/users
+Rendering users/index
+Completed in 0.11178 (8 reqs/sec) | Rendering: 0.10379 (92%) | DB: 0.00204 (1%) | 200 OK [http://localhost/users?order=descending&page=1&sort=age]
+  [4;36;1mSQL (0.000559)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.000173)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.000162)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.000179)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.000229)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.000056)[0m   [0mPRAGMA index_list("users")[0m
+  [4;36;1mSQL (0.000181)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.000206)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.001493)[0m   [0;1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255) DEFAULT NULL NULL, "email" varchar(255) DEFAULT NULL NULL, "admin" boolean DEFAULT NULL NULL, "age" integer DEFAULT NULL NULL, "created_at" datetime DEFAULT NULL NULL, "updated_at" datetime DEFAULT NULL NULL) [0m
+  [4;35;1mSQL (0.000204)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.001215)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;35;1mSQL (0.001437)[0m   [0mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;36;1mSQL (0.000426)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.000107)[0m   [0mSELECT version FROM "schema_migrations"[0m
+  [4;36;1mSQL (0.001219)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20080819225020')[0m
+  [4;36;1mSQL (0.000560)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.000173)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.000166)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.000182)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.000229)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.000054)[0m   [0mPRAGMA index_list("users")[0m
+  [4;36;1mSQL (0.000180)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.000218)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.001788)[0m   [0;1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255) DEFAULT NULL NULL, "email" varchar(255) DEFAULT NULL NULL, "admin" boolean DEFAULT NULL NULL, "age" integer DEFAULT NULL NULL, "created_at" datetime DEFAULT NULL NULL, "updated_at" datetime DEFAULT NULL NULL) [0m
+  [4;35;1mSQL (0.000224)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.001544)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;35;1mSQL (0.001641)[0m   [0mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;36;1mSQL (0.000351)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.000103)[0m   [0mSELECT version FROM "schema_migrations"[0m
+  [4;36;1mSQL (0.001474)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20080819225020')[0m
+  [4;36;1mSQL (0.000561)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.000185)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.000161)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.000185)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.000291)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.000056)[0m   [0mPRAGMA index_list("users")[0m
+  [4;36;1mSQL (0.000186)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.000208)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.001560)[0m   [0;1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255) DEFAULT NULL NULL, "email" varchar(255) DEFAULT NULL NULL, "admin" boolean DEFAULT NULL NULL, "age" integer DEFAULT NULL NULL, "created_at" datetime DEFAULT NULL NULL, "updated_at" datetime DEFAULT NULL NULL) [0m
+  [4;35;1mSQL (0.000205)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.001373)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;35;1mSQL (0.001537)[0m   [0mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;36;1mSQL (0.000358)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.000104)[0m   [0mSELECT version FROM "schema_migrations"[0m
+  [4;36;1mSQL (0.001488)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20080819225020')[0m
+
+
+Processing Base#index (for 127.0.0.1 at 2008-08-19 22:52:08) [GET]
+  Session ID: BAh7BiIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNo
+SGFzaHsABjoKQHVzZWR7AA==--20685813428b56b5182bd209614ad7246a05eba3
+  Parameters: {"order"=>"ascending", "sort"=>"age", "page"=>"1"}
+
+
+Errno::ENOENT (No such file or directory - /Users/dancroak/dev/sortable_table/test/rails_root/config/routes.rb):
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_controller/routing/route_set.rb:242:in `stat'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_controller/routing/route_set.rb:242:in `reload'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_controller/dispatcher.rb:130:in `reload_application'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.1.0/lib/active_support/callbacks.rb:173:in `send'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.1.0/lib/active_support/callbacks.rb:173:in `evaluate_method'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.1.0/lib/active_support/callbacks.rb:161:in `call'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.1.0/lib/active_support/callbacks.rb:90:in `run'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.1.0/lib/active_support/callbacks.rb:90:in `each'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.1.0/lib/active_support/callbacks.rb:90:in `send'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.1.0/lib/active_support/callbacks.rb:90:in `run'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.1.0/lib/active_support/callbacks.rb:272:in `run_callbacks'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_controller/dispatcher.rb:106:in `dispatch'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_controller/dispatcher.rb:104:in `synchronize'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_controller/dispatcher.rb:104:in `dispatch'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_controller/dispatcher.rb:120:in `dispatch_cgi'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_controller/dispatcher.rb:35:in `dispatch'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/bin/../lib/mongrel/rails.rb:76:in `process'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/bin/../lib/mongrel/rails.rb:74:in `synchronize'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/bin/../lib/mongrel/rails.rb:74:in `process'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:159:in `process_client'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `each'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `process_client'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `initialize'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `new'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `initialize'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `new'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `run'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel/configurator.rb:282:in `run'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel/configurator.rb:281:in `each'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel/configurator.rb:281:in `run'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/bin/mongrel_rails:128:in `run'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel/command.rb:212:in `run'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/bin/mongrel_rails:281
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.1.0/lib/active_support/dependencies.rb:502:in `load'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.1.0/lib/active_support/dependencies.rb:502:in `load'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.1.0/lib/active_support/dependencies.rb:354:in `new_constants_in'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.1.0/lib/active_support/dependencies.rb:502:in `load'
+    /Library/Ruby/Gems/1.8/gems/rails-2.1.0/lib/commands/servers/mongrel.rb:64
+    /Library/Ruby/Site/1.8/rubygems/custom_require.rb:27:in `gem_original_require'
+    /Library/Ruby/Site/1.8/rubygems/custom_require.rb:27:in `require'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.1.0/lib/active_support/dependencies.rb:509:in `require'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.1.0/lib/active_support/dependencies.rb:354:in `new_constants_in'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.1.0/lib/active_support/dependencies.rb:509:in `require'
+    /Library/Ruby/Gems/1.8/gems/rails-2.1.0/lib/commands/server.rb:39
+    /Library/Ruby/Site/1.8/rubygems/custom_require.rb:27:in `gem_original_require'
+    /Library/Ruby/Site/1.8/rubygems/custom_require.rb:27:in `require'
+    script/server:3
+
+Rendering /Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_controller/templates/rescues/layout.erb (internal_server_error)
+
+
+Processing UsersController#index (for 127.0.0.1 at 2008-08-19 22:52:47) [GET]
+  Session ID: BAh7BiIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNo
+SGFzaHsABjoKQHVzZWR7AA==--20685813428b56b5182bd209614ad7246a05eba3
+  Parameters: {"order"=>"ascending", "action"=>"index", "controller"=>"users", "sort"=>"age", "page"=>"1"}
+  [4;36;1mUser Load (0.002239)[0m   [0;1mSELECT * FROM "users" ORDER BY age asc[0m
+Rendering template within layouts/users
+Rendering users/index
+Completed in 0.04754 (21 reqs/sec) | Rendering: 0.03896 (81%) | DB: 0.00224 (4%) | 200 OK [http://localhost/users?order=ascending&page=1&sort=age]
+
+
+Processing UsersController#index (for 127.0.0.1 at 2008-08-19 22:52:49) [GET]
+  Session ID: BAh7BiIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNo
+SGFzaHsABjoKQHVzZWR7AA==--20685813428b56b5182bd209614ad7246a05eba3
+  Parameters: {"order"=>"descending", "action"=>"index", "controller"=>"users", "sort"=>"age", "page"=>"1"}
+  [4;35;1mUser Load (0.001917)[0m   [0mSELECT * FROM "users" ORDER BY age desc[0m
+Rendering template within layouts/users
+Rendering users/index
+Completed in 0.01319 (75 reqs/sec) | Rendering: 0.00551 (41%) | DB: 0.00192 (14%) | 200 OK [http://localhost/users?order=descending&page=1&sort=age]
+
+
+Processing UsersController#index (for 127.0.0.1 at 2008-08-19 22:52:51) [GET]
+  Session ID: BAh7BiIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNo
+SGFzaHsABjoKQHVzZWR7AA==--20685813428b56b5182bd209614ad7246a05eba3
+  Parameters: {"order"=>"ascending", "action"=>"index", "controller"=>"users", "sort"=>"email", "page"=>"1"}
+  [4;36;1mUser Load (0.001998)[0m   [0;1mSELECT * FROM "users" ORDER BY users.email asc[0m
+Rendering template within layouts/users
+Rendering users/index
+Completed in 0.01311 (76 reqs/sec) | Rendering: 0.00546 (41%) | DB: 0.00200 (15%) | 200 OK [http://localhost/users?order=ascending&page=1&sort=email]
+
+
+Processing UsersController#index (for 127.0.0.1 at 2008-08-19 22:52:51) [GET]
+  Session ID: BAh7BiIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNo
+SGFzaHsABjoKQHVzZWR7AA==--20685813428b56b5182bd209614ad7246a05eba3
+  Parameters: {"order"=>"descending", "action"=>"index", "controller"=>"users", "sort"=>"email", "page"=>"1"}
+  [4;35;1mUser Load (0.002049)[0m   [0mSELECT * FROM "users" ORDER BY users.email desc[0m
+Rendering template within layouts/users
+Rendering users/index
+Completed in 0.01338 (74 reqs/sec) | Rendering: 0.00572 (42%) | DB: 0.00205 (15%) | 200 OK [http://localhost/users?order=descending&page=1&sort=email]
+
+
+Processing UsersController#index (for 127.0.0.1 at 2008-08-19 22:52:59) [GET]
+  Session ID: BAh7BiIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNo
+SGFzaHsABjoKQHVzZWR7AA==--20685813428b56b5182bd209614ad7246a05eba3
+  Parameters: {"order"=>"ascending", "action"=>"index", "controller"=>"users", "sort"=>"name", "page"=>"1"}
+  [4;36;1mUser Load (0.001936)[0m   [0;1mSELECT * FROM "users" ORDER BY name asc[0m
+Rendering template within layouts/users
+Rendering users/index
+Completed in 0.01298 (77 reqs/sec) | Rendering: 0.00547 (42%) | DB: 0.00194 (14%) | 200 OK [http://localhost/users?order=ascending&page=1&sort=name]
+
+
+Processing UsersController#index (for 127.0.0.1 at 2008-08-19 22:53:00) [GET]
+  Session ID: BAh7BiIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNo
+SGFzaHsABjoKQHVzZWR7AA==--20685813428b56b5182bd209614ad7246a05eba3
+  Parameters: {"order"=>"descending", "action"=>"index", "controller"=>"users", "sort"=>"name", "page"=>"1"}
+  [4;35;1mUser Load (0.002049)[0m   [0mSELECT * FROM "users" ORDER BY name desc[0m
+Rendering template within layouts/users
+Rendering users/index
+Completed in 0.11221 (8 reqs/sec) | Rendering: 0.10423 (92%) | DB: 0.00205 (1%) | 200 OK [http://localhost/users?order=descending&page=1&sort=name]
+  [4;36;1mSQL (0.000572)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.000174)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.000167)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.000185)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.000231)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.000054)[0m   [0mPRAGMA index_list("users")[0m
+  [4;36;1mSQL (0.000186)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.000206)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.001615)[0m   [0;1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255) DEFAULT NULL NULL, "email" varchar(255) DEFAULT NULL NULL, "admin" boolean DEFAULT NULL NULL, "age" integer DEFAULT NULL NULL, "created_at" datetime DEFAULT NULL NULL, "updated_at" datetime DEFAULT NULL NULL) [0m
+  [4;35;1mSQL (0.000239)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.001506)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;35;1mSQL (0.001780)[0m   [0mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;36;1mSQL (0.000433)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.000149)[0m   [0mSELECT version FROM "schema_migrations"[0m
+  [4;36;1mSQL (0.001828)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20080819225020')[0m
+
+
+Processing UsersController#index (for 127.0.0.1 at 2008-08-20 10:11:32) [GET]
+  Session ID: BAh7BiIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNo
+SGFzaHsABjoKQHVzZWR7AA==--20685813428b56b5182bd209614ad7246a05eba3
+  Parameters: {"order"=>"ascending", "action"=>"index", "controller"=>"users", "sort"=>"email", "page"=>"1"}
+  [4;36;1mUser Load (0.002157)[0m   [0;1mSELECT * FROM "users" ORDER BY users.email asc[0m
+Rendering template within layouts/users
+Rendering users/index
+Completed in 0.01452 (68 reqs/sec) | Rendering: 0.00578 (39%) | DB: 0.00216 (14%) | 200 OK [http://localhost/users?order=ascending&page=1&sort=email]
+
+
+Processing UsersController#index (for 127.0.0.1 at 2008-08-20 10:11:33) [GET]
+  Session ID: BAh7BiIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNo
+SGFzaHsABjoKQHVzZWR7AA==--20685813428b56b5182bd209614ad7246a05eba3
+  Parameters: {"order"=>"descending", "action"=>"index", "controller"=>"users", "sort"=>"email", "page"=>"1"}
+  [4;35;1mUser Load (0.002202)[0m   [0mSELECT * FROM "users" ORDER BY users.email desc[0m
+Rendering template within layouts/users
+Rendering users/index
+Completed in 0.01380 (72 reqs/sec) | Rendering: 0.00555 (40%) | DB: 0.00220 (15%) | 200 OK [http://localhost/users?order=descending&page=1&sort=email]
+
+
+Processing UsersController#index (for 127.0.0.1 at 2008-08-20 10:11:34) [GET]
+  Session ID: BAh7BiIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNo
+SGFzaHsABjoKQHVzZWR7AA==--20685813428b56b5182bd209614ad7246a05eba3
+  Parameters: {"order"=>"ascending", "action"=>"index", "controller"=>"users", "sort"=>"age", "page"=>"1"}
+  [4;36;1mUser Load (0.002056)[0m   [0;1mSELECT * FROM "users" ORDER BY age asc[0m
+Rendering template within layouts/users
+Rendering users/index
+Completed in 0.01464 (68 reqs/sec) | Rendering: 0.00611 (41%) | DB: 0.00206 (14%) | 200 OK [http://localhost/users?order=ascending&page=1&sort=age]
+
+
+Processing UsersController#index (for 127.0.0.1 at 2008-08-20 10:11:35) [GET]
+  Session ID: BAh7BiIKZmxhc2hJQzonQWN0aW9uQ29udHJvbGxlcjo6Rmxhc2g6OkZsYXNo
+SGFzaHsABjoKQHVzZWR7AA==--20685813428b56b5182bd209614ad7246a05eba3
+  Parameters: {"order"=>"descending", "action"=>"index", "controller"=>"users", "sort"=>"age", "page"=>"1"}
+  [4;35;1mUser Load (0.002038)[0m   [0mSELECT * FROM "users" ORDER BY age desc[0m
+Rendering template within layouts/users
+Rendering users/index
+Completed in 0.01353 (73 reqs/sec) | Rendering: 0.00568 (42%) | DB: 0.00204 (15%) | 200 OK [http://localhost/users?order=descending&page=1&sort=age]

@@ -1,6 +1,6 @@
-require 'sortable_table/view_helper'
-require 'sortable_table'
+require 'sortable/view'
+require 'sortable/controller'
 
 if defined?(Rails) && Rails.env == 'test'
-  require 'sortable_table/shoulda'
+  require 'sortable/test'
 end
