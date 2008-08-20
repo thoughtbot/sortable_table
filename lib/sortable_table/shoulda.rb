@@ -14,7 +14,7 @@ class Test::Unit::TestCase
         
         get :index, :sort => attribute.to_s, :order => direction
         
-        #controller tests
+        # controller tests
         
         assert_not_nil assigns(collection), 
           "assigns(:#{collection}) is nil"
@@ -27,6 +27,8 @@ class Test::Unit::TestCase
         assert expected == assigns(collection), 
           "expected - #{expected.map(&block).inspect}," <<
           " but was - #{assigns(collection).map(&block).inspect}"
+        
+        # view tests
           
         view_helper_error_message = "Include the sortable_table_header" <<
           " helper in your view with the option :sort => '#{attribute}'"
@@ -37,6 +39,12 @@ class Test::Unit::TestCase
         end
       end
     end
+  end
+  
+  def stubbed_action_view
+    view = ActionView::Base.new(@controller.class.view_paths, {}, @controller)
+    yield view
+    ActionView::Base.stubs(:new).returns(view)
   end
   
 end
