@@ -4,10 +4,11 @@ class SortableTable
 
     def sortable_table_header(*args)
       opts = args.extract_options!
-      # puts "args: #{args.inspect}"
-      # puts "opts: #{opts.inspect}"
       
       inner_html = args
+      if inner_html.blank?
+        raise ArgumentError "Must specify inner_html as first argument"
+      end
       
       # if args.first.is_a?(String)
       #   inner_html = args.shift
@@ -25,6 +26,7 @@ class SortableTable
       
       # anchor = opts[:anchor].blank? ? "" : "##{opts[:anchor]}"
       # sortable_url(opts) + anchor
+    
       content_tag :th, 
         link_to(inner_html, 
           sortable_url(opts), 
