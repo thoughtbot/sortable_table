@@ -2,10 +2,9 @@
 
 <table>
   <tr>
-    <%= sortable_table_header :name => 'First Name', :sort => 'name', :title => 'Click to sort by name' %>
-    <th>Email</th>
-    <th>Admin</th>
-    <th>Age</th>
+    <%= sortable_table_header 'Name', :sort => 'name' %>
+    <%= sortable_table_header 'Email', :sort => 'email' %>
+    <%= sortable_table_header 'Age', :sort => 'age' %>
     <th>Created On</th>
   </tr>
 
@@ -13,7 +12,6 @@
   <tr>
     <td><%=h user.name %></td>
     <td><%=h user.email %></td>
-    <td><%=h user.admin %></td>
     <td><%=h user.age %></td>
     <td><%=h user.created_at.to_s %></td>
   </tr>

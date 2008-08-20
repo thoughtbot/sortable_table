@@ -14,6 +14,8 @@ class Test::Unit::TestCase
         
         get :index, :sort => attribute.to_s, :order => direction
         
+        #controller tests
+        
         assert_not_nil assigns(collection), 
           "assigns(:#{collection}) is nil"
         assert assigns(collection).size >= 2, 
@@ -25,6 +27,14 @@ class Test::Unit::TestCase
         assert expected == assigns(collection), 
           "expected - #{expected.map(&block).inspect}," <<
           " but was - #{assigns(collection).map(&block).inspect}"
+          
+        view_helper_error_message = "Include the sortable_table_header" <<
+          " helper in your view with the option :sort => '#{attribute}'"
+        
+        assert_select "th" do
+          assert_select "a[href*=?]", "sort=#{attribute.to_s}", 
+            true, view_helper_error_message
+        end
       end
     end
   end

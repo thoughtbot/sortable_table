@@ -899,3 +899,644 @@ Rendering /Library/Ruby/Gems/1.8/gems/actionpack-2.1.0/lib/action_controller/tem
 [0m
   [4;35;1mSQL (0.000155)[0m   [0mSELECT version FROM "schema_migrations"[0m
   [4;36;1mSQL (0.002375)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20080819225020')[0m
+  [4;36;1mSQL (0.000939)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.000249)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.000289)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.000274)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.000336)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.000085)[0m   [0mPRAGMA index_list("users")[0m
+  [4;36;1mSQL (0.000271)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.000290)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.003174)[0m   [0;1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255) DEFAULT NULL NULL, "email" varchar(255) DEFAULT NULL NULL, "admin" boolean DEFAULT NULL NULL, "age" integer DEFAULT NULL NULL, "created_at" datetime DEFAULT NULL NULL, "updated_at" datetime DEFAULT NULL NULL) [0m
+  [4;35;1mSQL (0.000311)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.001866)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;35;1mSQL (0.002362)[0m   [0mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;36;1mSQL (0.000405)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.000169)[0m   [0mSELECT version FROM "schema_migrations"[0m
+  [4;36;1mSQL (0.002125)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20080819225020')[0m
+  [4;36;1mSQL (0.000812)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.000244)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.000277)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.000270)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.000333)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.000088)[0m   [0mPRAGMA index_list("users")[0m
+  [4;36;1mSQL (0.000269)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.000290)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.002982)[0m   [0;1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255) DEFAULT NULL NULL, "email" varchar(255) DEFAULT NULL NULL, "admin" boolean DEFAULT NULL NULL, "age" integer DEFAULT NULL NULL, "created_at" datetime DEFAULT NULL NULL, "updated_at" datetime DEFAULT NULL NULL) [0m
+  [4;35;1mSQL (0.000310)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.001816)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;35;1mSQL (0.001994)[0m   [0mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;36;1mSQL (0.000524)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.000182)[0m   [0mSELECT version FROM "schema_migrations"[0m
+  [4;36;1mSQL (0.001904)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20080819225020')[0m
+  [4;36;1mSQL (0.000796)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.000246)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.000288)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.000272)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.000335)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.000084)[0m   [0mPRAGMA index_list("users")[0m
+  [4;36;1mSQL (0.000266)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.000288)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.002943)[0m   [0;1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255) DEFAULT NULL NULL, "email" varchar(255) DEFAULT NULL NULL, "admin" boolean DEFAULT NULL NULL, "age" integer DEFAULT NULL NULL, "created_at" datetime DEFAULT NULL NULL, "updated_at" datetime DEFAULT NULL NULL) [0m
+  [4;35;1mSQL (0.000308)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.001818)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;35;1mSQL (0.001944)[0m   [0mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;36;1mSQL (0.000581)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.000183)[0m   [0mSELECT version FROM "schema_migrations"[0m
+  [4;36;1mSQL (0.001932)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20080819225020')[0m
+  [4;36;1mSQL (0.000806)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.000249)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.000305)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.000279)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.000339)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.000087)[0m   [0mPRAGMA index_list("users")[0m
+  [4;36;1mSQL (0.000270)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.000295)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.257761)[0m   [0;1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255) DEFAULT NULL NULL, "email" varchar(255) DEFAULT NULL NULL, "admin" boolean DEFAULT NULL NULL, "age" integer DEFAULT NULL NULL, "created_at" datetime DEFAULT NULL NULL, "updated_at" datetime DEFAULT NULL NULL) [0m
+  [4;35;1mSQL (0.000416)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.255262)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;35;1mSQL (0.338029)[0m   [0mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;36;1mSQL (0.000512)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.000162)[0m   [0mSELECT version FROM "schema_migrations"[0m
+  [4;36;1mSQL (0.265681)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20080819225020')[0m
+  [4;36;1mSQL (0.000806)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.000248)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.000287)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.000272)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.000342)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.000085)[0m   [0mPRAGMA index_list("users")[0m
+  [4;36;1mSQL (0.000268)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.000292)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.002900)[0m   [0;1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255) DEFAULT NULL NULL, "email" varchar(255) DEFAULT NULL NULL, "admin" boolean DEFAULT NULL NULL, "age" integer DEFAULT NULL NULL, "created_at" datetime DEFAULT NULL NULL, "updated_at" datetime DEFAULT NULL NULL) [0m
+  [4;35;1mSQL (0.000310)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.001565)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;35;1mSQL (0.001928)[0m   [0mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;36;1mSQL (0.000406)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.000172)[0m   [0mSELECT version FROM "schema_migrations"[0m
+  [4;36;1mSQL (0.001809)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20080819225020')[0m
+  [4;36;1mSQL (0.000796)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.000248)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.000298)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.000273)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.000335)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.000084)[0m   [0mPRAGMA index_list("users")[0m
+  [4;36;1mSQL (0.000268)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.000291)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.003383)[0m   [0;1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255) DEFAULT NULL NULL, "email" varchar(255) DEFAULT NULL NULL, "admin" boolean DEFAULT NULL NULL, "age" integer DEFAULT NULL NULL, "created_at" datetime DEFAULT NULL NULL, "updated_at" datetime DEFAULT NULL NULL) [0m
+  [4;35;1mSQL (0.000299)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.001950)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;35;1mSQL (0.002208)[0m   [0mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;36;1mSQL (0.000412)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.000162)[0m   [0mSELECT version FROM "schema_migrations"[0m
+  [4;36;1mSQL (0.002208)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20080819225020')[0m
+  [4;36;1mSQL (0.000831)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.000265)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.000308)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.000281)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.000375)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.000090)[0m   [0mPRAGMA index_list("users")[0m
+  [4;36;1mSQL (0.000276)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.000384)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.002703)[0m   [0;1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255) DEFAULT NULL NULL, "email" varchar(255) DEFAULT NULL NULL, "admin" boolean DEFAULT NULL NULL, "age" integer DEFAULT NULL NULL, "created_at" datetime DEFAULT NULL NULL, "updated_at" datetime DEFAULT NULL NULL) [0m
+  [4;35;1mSQL (0.000360)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.001605)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;35;1mSQL (0.001780)[0m   [0mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;36;1mSQL (0.000585)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.000185)[0m   [0mSELECT version FROM "schema_migrations"[0m
+  [4;36;1mSQL (0.001675)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20080819225020')[0m
+  [4;36;1mSQL (0.000792)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.000245)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.000287)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.000271)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.000331)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.000093)[0m   [0mPRAGMA index_list("users")[0m
+  [4;36;1mSQL (0.000268)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.000290)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.002909)[0m   [0;1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255) DEFAULT NULL NULL, "email" varchar(255) DEFAULT NULL NULL, "admin" boolean DEFAULT NULL NULL, "age" integer DEFAULT NULL NULL, "created_at" datetime DEFAULT NULL NULL, "updated_at" datetime DEFAULT NULL NULL) [0m
+  [4;35;1mSQL (0.000304)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.001793)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;35;1mSQL (0.001933)[0m   [0mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;36;1mSQL (0.000590)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.000181)[0m   [0mSELECT version FROM "schema_migrations"[0m
+  [4;36;1mSQL (0.001971)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20080819225020')[0m
+
+
+Processing UsersController#index (for 127.0.0.1 at 2008-08-19 20:09:38) [GET]
+  Session ID: BAh7BzoMY3NyZl9pZCIlOTgwNTJjMzJhMTViY2NmNTNjOTdjNDA0M2YyZTc2
+NzIiCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNoOjpGbGFzaEhh
+c2h7AAY6CkB1c2VkewA=--75e88912af8113fe952443b1955d370975feab11
+  Parameters: {"order"=>"descending", "action"=>"index", "controller"=>"users", "sort"=>"email", "page"=>"1"}
+  [4;35;1mUser Load (0.002744)[0m   [0mSELECT * FROM "users" ORDER BY users.email desc[0m
+Rendering template within layouts/users
+Rendering users/index
+Completed in 0.02053 (48 reqs/sec) | Rendering: 0.00934 (45%) | DB: 0.00274 (13%) | 200 OK [http://localhost/users?order=descending&page=1&sort=email]
+  [4;36;1mSQL (0.000810)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.000251)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.000297)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.000299)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.000339)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.000086)[0m   [0mPRAGMA index_list("users")[0m
+  [4;36;1mSQL (0.000276)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.000296)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.003391)[0m   [0;1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255) DEFAULT NULL NULL, "email" varchar(255) DEFAULT NULL NULL, "admin" boolean DEFAULT NULL NULL, "age" integer DEFAULT NULL NULL, "created_at" datetime DEFAULT NULL NULL, "updated_at" datetime DEFAULT NULL NULL) [0m
+  [4;35;1mSQL (0.000323)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.001995)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;35;1mSQL (0.002284)[0m   [0mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;36;1mSQL (0.000412)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.000161)[0m   [0mSELECT version FROM "schema_migrations"[0m
+  [4;36;1mSQL (0.002174)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20080819225020')[0m
+  [4;36;1mSQL (0.000804)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.000283)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.000279)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.000333)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.000341)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.000087)[0m   [0mPRAGMA index_list("users")[0m
+  [4;36;1mSQL (0.000285)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.000320)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.003061)[0m   [0;1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255) DEFAULT NULL NULL, "email" varchar(255) DEFAULT NULL NULL, "admin" boolean DEFAULT NULL NULL, "age" integer DEFAULT NULL NULL, "created_at" datetime DEFAULT NULL NULL, "updated_at" datetime DEFAULT NULL NULL) [0m
+  [4;35;1mSQL (0.000310)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.001672)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;35;1mSQL (0.002147)[0m   [0mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;36;1mSQL (0.000449)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.000182)[0m   [0mSELECT version FROM "schema_migrations"[0m
+  [4;36;1mSQL (0.001832)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20080819225020')[0m
+  [4;36;1mSQL (0.000800)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.000246)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.000335)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.000337)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.000346)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.000088)[0m   [0mPRAGMA index_list("users")[0m
+  [4;36;1mSQL (0.000273)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.000292)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.002867)[0m   [0;1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255) DEFAULT NULL NULL, "email" varchar(255) DEFAULT NULL NULL, "admin" boolean DEFAULT NULL NULL, "age" integer DEFAULT NULL NULL, "created_at" datetime DEFAULT NULL NULL, "updated_at" datetime DEFAULT NULL NULL) [0m
+  [4;35;1mSQL (0.000314)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.001833)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;35;1mSQL (0.001883)[0m   [0mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;36;1mSQL (0.000553)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.000208)[0m   [0mSELECT version FROM "schema_migrations"[0m
+  [4;36;1mSQL (0.001835)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20080819225020')[0m
+  [4;36;1mSQL (0.000798)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.000247)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.000286)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.000269)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.000354)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.000087)[0m   [0mPRAGMA index_list("users")[0m
+  [4;36;1mSQL (0.000276)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.000293)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.003522)[0m   [0;1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255) DEFAULT NULL NULL, "email" varchar(255) DEFAULT NULL NULL, "admin" boolean DEFAULT NULL NULL, "age" integer DEFAULT NULL NULL, "created_at" datetime DEFAULT NULL NULL, "updated_at" datetime DEFAULT NULL NULL) [0m
+  [4;35;1mSQL (0.000341)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.001942)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;35;1mSQL (0.002182)[0m   [0mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;36;1mSQL (0.000400)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.000166)[0m   [0mSELECT version FROM "schema_migrations"[0m
+  [4;36;1mSQL (0.002231)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20080819225020')[0m
+  [4;36;1mSQL (0.000792)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.000245)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.000281)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.000272)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.000334)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.000085)[0m   [0mPRAGMA index_list("users")[0m
+  [4;36;1mSQL (0.000274)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.000316)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.003263)[0m   [0;1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255) DEFAULT NULL NULL, "email" varchar(255) DEFAULT NULL NULL, "admin" boolean DEFAULT NULL NULL, "age" integer DEFAULT NULL NULL, "created_at" datetime DEFAULT NULL NULL, "updated_at" datetime DEFAULT NULL NULL) [0m
+  [4;35;1mSQL (0.000312)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.001975)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;35;1mSQL (0.002221)[0m   [0mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;36;1mSQL (0.000392)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.000168)[0m   [0mSELECT version FROM "schema_migrations"[0m
+  [4;36;1mSQL (0.002187)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20080819225020')[0m
+  [4;36;1mSQL (0.000800)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.000252)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.000285)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.000275)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.000337)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.000085)[0m   [0mPRAGMA index_list("users")[0m
+  [4;36;1mSQL (0.000274)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.000295)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.002874)[0m   [0;1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255) DEFAULT NULL NULL, "email" varchar(255) DEFAULT NULL NULL, "admin" boolean DEFAULT NULL NULL, "age" integer DEFAULT NULL NULL, "created_at" datetime DEFAULT NULL NULL, "updated_at" datetime DEFAULT NULL NULL) [0m
+  [4;35;1mSQL (0.000319)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.001838)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;35;1mSQL (0.001976)[0m   [0mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;36;1mSQL (0.000492)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.000190)[0m   [0mSELECT version FROM "schema_migrations"[0m
+  [4;36;1mSQL (0.001862)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20080819225020')[0m
+  [4;36;1mSQL (0.000802)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.000244)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.000283)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.000272)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.000335)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.000085)[0m   [0mPRAGMA index_list("users")[0m
+  [4;36;1mSQL (0.000278)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.000297)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.002790)[0m   [0;1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255) DEFAULT NULL NULL, "email" varchar(255) DEFAULT NULL NULL, "admin" boolean DEFAULT NULL NULL, "age" integer DEFAULT NULL NULL, "created_at" datetime DEFAULT NULL NULL, "updated_at" datetime DEFAULT NULL NULL) [0m
+  [4;35;1mSQL (0.000316)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.001512)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;35;1mSQL (0.001722)[0m   [0mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;36;1mSQL (0.000468)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.000238)[0m   [0mSELECT version FROM "schema_migrations"[0m
+  [4;36;1mSQL (0.001847)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20080819225020')[0m
+  [4;36;1mSQL (0.000798)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.000247)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.000282)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.000279)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.000337)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.000086)[0m   [0mPRAGMA index_list("users")[0m
+  [4;36;1mSQL (0.000278)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.000294)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.003002)[0m   [0;1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255) DEFAULT NULL NULL, "email" varchar(255) DEFAULT NULL NULL, "admin" boolean DEFAULT NULL NULL, "age" integer DEFAULT NULL NULL, "created_at" datetime DEFAULT NULL NULL, "updated_at" datetime DEFAULT NULL NULL) [0m
+  [4;35;1mSQL (0.000463)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.001713)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;35;1mSQL (0.001901)[0m   [0mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;36;1mSQL (0.000579)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.000181)[0m   [0mSELECT version FROM "schema_migrations"[0m
+  [4;36;1mSQL (0.001779)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20080819225020')[0m
+  [4;36;1mSQL (0.000799)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.000244)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.000284)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.000273)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.000335)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.000108)[0m   [0mPRAGMA index_list("users")[0m
+  [4;36;1mSQL (0.000274)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.000293)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.003437)[0m   [0;1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255) DEFAULT NULL NULL, "email" varchar(255) DEFAULT NULL NULL, "admin" boolean DEFAULT NULL NULL, "age" integer DEFAULT NULL NULL, "created_at" datetime DEFAULT NULL NULL, "updated_at" datetime DEFAULT NULL NULL) [0m
+  [4;35;1mSQL (0.000315)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.001972)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;35;1mSQL (0.002561)[0m   [0mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;36;1mSQL (0.000392)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.000153)[0m   [0mSELECT version FROM "schema_migrations"[0m
+  [4;36;1mSQL (0.002242)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20080819225020')[0m
+  [4;36;1mSQL (0.000799)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.000246)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.000280)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.000306)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.000334)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.000093)[0m   [0mPRAGMA index_list("users")[0m
+  [4;36;1mSQL (0.000276)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.000291)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.002933)[0m   [0;1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255) DEFAULT NULL NULL, "email" varchar(255) DEFAULT NULL NULL, "admin" boolean DEFAULT NULL NULL, "age" integer DEFAULT NULL NULL, "created_at" datetime DEFAULT NULL NULL, "updated_at" datetime DEFAULT NULL NULL) [0m
+  [4;35;1mSQL (0.000333)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.001529)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;35;1mSQL (0.001829)[0m   [0mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;36;1mSQL (0.000445)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.000162)[0m   [0mSELECT version FROM "schema_migrations"[0m
+  [4;36;1mSQL (0.001781)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20080819225020')[0m
+  [4;36;1mSQL (0.000800)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.000245)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.000286)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.000274)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.000332)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.000089)[0m   [0mPRAGMA index_list("users")[0m
+  [4;36;1mSQL (0.000272)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.000291)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.002832)[0m   [0;1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255) DEFAULT NULL NULL, "email" varchar(255) DEFAULT NULL NULL, "admin" boolean DEFAULT NULL NULL, "age" integer DEFAULT NULL NULL, "created_at" datetime DEFAULT NULL NULL, "updated_at" datetime DEFAULT NULL NULL) [0m
+  [4;35;1mSQL (0.000312)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.001589)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;35;1mSQL (0.001752)[0m   [0mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;36;1mSQL (0.000443)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.000239)[0m   [0mSELECT version FROM "schema_migrations"[0m
+  [4;36;1mSQL (0.001893)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20080819225020')[0m
+  [4;36;1mSQL (0.000798)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.000255)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.000275)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.000307)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.000332)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.000088)[0m   [0mPRAGMA index_list("users")[0m
+  [4;36;1mSQL (0.000274)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.000290)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.002724)[0m   [0;1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255) DEFAULT NULL NULL, "email" varchar(255) DEFAULT NULL NULL, "admin" boolean DEFAULT NULL NULL, "age" integer DEFAULT NULL NULL, "created_at" datetime DEFAULT NULL NULL, "updated_at" datetime DEFAULT NULL NULL) [0m
+  [4;35;1mSQL (0.000312)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.001852)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;35;1mSQL (0.002280)[0m   [0mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;36;1mSQL (0.000482)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.000179)[0m   [0mSELECT version FROM "schema_migrations"[0m
+  [4;36;1mSQL (0.001955)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20080819225020')[0m
+  [4;36;1mSQL (0.000807)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.000248)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.000290)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.000270)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.000331)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.000086)[0m   [0mPRAGMA index_list("users")[0m
+  [4;36;1mSQL (0.000275)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.000294)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.002835)[0m   [0;1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255) DEFAULT NULL NULL, "email" varchar(255) DEFAULT NULL NULL, "admin" boolean DEFAULT NULL NULL, "age" integer DEFAULT NULL NULL, "created_at" datetime DEFAULT NULL NULL, "updated_at" datetime DEFAULT NULL NULL) [0m
+  [4;35;1mSQL (0.000314)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.001676)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;35;1mSQL (0.001907)[0m   [0mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;36;1mSQL (0.000445)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.000184)[0m   [0mSELECT version FROM "schema_migrations"[0m
+  [4;36;1mSQL (0.001820)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20080819225020')[0m

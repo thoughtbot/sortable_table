@@ -2,12 +2,32 @@ class SortableTable
 
   module ViewHelper
 
-    def sortable_table_header(opts = {})
-      raise ArgumentError if opts[:name].nil? || opts[:sort].nil?
-      anchor = opts[:anchor].blank? ? "" : "##{opts[:anchor]}"
+    def sortable_table_header(*args)
+      opts = args.extract_options!
+      # puts "args: #{args.inspect}"
+      # puts "opts: #{opts.inspect}"
+      
+      inner_html = args
+      
+      # if args.first.is_a?(String)
+      #   inner_html = args.shift
+      # elsif opts.first.is_a?(Hash)
+      #   if opts.has_key?(:inner_html)
+      #     inner_html = opts[:inner_html]
+      #   else
+      #     # raise ArgumentError unless opts.has_key?(:sort)
+      #     inner_html = opts[:sort].humanize
+      #   end
+      # else
+      #   raise ArgumentError, 
+      #     "calling signature must be String, Hash or Hash"
+      # end
+      
+      # anchor = opts[:anchor].blank? ? "" : "##{opts[:anchor]}"
+      # sortable_url(opts) + anchor
       content_tag :th, 
-        link_to(opts[:name], 
-          sortable_url(opts) + anchor, 
+        link_to(inner_html, 
+          sortable_url(opts), 
           :title => opts[:title]),
         :class => class_name_for_sortable_table_header_tag(opts)
     end
