@@ -1,7 +1,12 @@
 Sortable Table
 ==============
 
-Thanks to Joe Ferris and Boston.rb.
+Rails plugin to sort tables of ActiveRecord data.
+
+Install
+-------
+
+    script/plugin install git@github.com:dancroak/sortable_table.git
 
 Conventions
 -----------
@@ -58,5 +63,10 @@ And some sugar for your views:
 		    %tr
 		      %td= each.name
 		      %td= each.email
+
+Authors
+-------
+
+Dan Croak, Joe Ferris, and Boston.rb.
 
 Copyright (c) 2008 Dan Croak, released under the MIT license
