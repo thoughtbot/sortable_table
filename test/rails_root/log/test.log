@@ -3184,3 +3184,459 @@ Processing UsersController#index (for 0.0.0.0 at 2008-08-19 22:54:01) [GET]
 Rendering template within layouts/users
 Rendering users/index
 Completed in 0.00537 (186 reqs/sec) | Rendering: 0.00332 (61%) | DB: 0.00275 (51%) | 200 OK [http://test.host/users?order=descending&sort=name]
+  [4;36;1mUser Create (0.000582)[0m   [0;1mINSERT INTO "users" ("name", "updated_at", "admin", "age", "email", "created_at") VALUES(NULL, '2008-09-10 17:51:50', NULL, 1, 'email1@example.com', '2008-09-10 17:51:50')[0m
+  [4;35;1mUser Create (0.000216)[0m   [0mINSERT INTO "users" ("name", "updated_at", "admin", "age", "email", "created_at") VALUES(NULL, '2008-09-10 17:51:50', NULL, 2, 'email2@example.com', '2008-09-10 17:51:50')[0m
+  [4;36;1mUser Load (0.000669)[0m   [0;1mSELECT * FROM "users" [0m
+
+
+Processing UsersController#index (for 0.0.0.0 at 2008-09-10 13:51:50) [GET]
+  Session ID: 
+  Parameters: {"order"=>"ascending", "action"=>"index", "controller"=>"users", "sort"=>"age"}
+  [4;35;1mUser Load (0.001461)[0m   [0mSELECT * FROM "users" ORDER BY age asc[0m
+Rendering template within layouts/users
+Rendering users/index
+Completed in 0.12748 (7 reqs/sec) | Rendering: 0.12078 (94%) | DB: 0.00293 (2%) | 200 OK [http://test.host/users?order=ascending&sort=age]
+  [4;36;1mUser Create (0.000502)[0m   [0;1mINSERT INTO "users" ("name", "updated_at", "admin", "age", "email", "created_at") VALUES(NULL, '2008-09-10 17:51:50', NULL, 3, 'email3@example.com', '2008-09-10 17:51:50')[0m
+  [4;35;1mUser Create (0.000141)[0m   [0mINSERT INTO "users" ("name", "updated_at", "admin", "age", "email", "created_at") VALUES(NULL, '2008-09-10 17:51:50', NULL, 4, 'email4@example.com', '2008-09-10 17:51:50')[0m
+  [4;36;1mUser Load (0.000604)[0m   [0;1mSELECT * FROM "users" [0m
+
+
+Processing UsersController#index (for 0.0.0.0 at 2008-09-10 13:51:50) [GET]
+  Session ID: 
+  Parameters: {"order"=>"descending", "action"=>"index", "controller"=>"users", "sort"=>"age"}
+  [4;35;1mUser Load (0.001159)[0m   [0mSELECT * FROM "users" ORDER BY age desc[0m
+Rendering template within layouts/users
+Rendering users/index
+Completed in 0.00422 (237 reqs/sec) | Rendering: 0.00248 (58%) | DB: 0.00241 (57%) | 200 OK [http://test.host/users?order=descending&sort=age]
+  [4;36;1mUser Create (0.000434)[0m   [0;1mINSERT INTO "users" ("name", "updated_at", "admin", "age", "email", "created_at") VALUES(NULL, '2008-09-10 17:51:50', NULL, 5, 'email5@example.com', '2008-09-10 17:51:50')[0m
+  [4;35;1mUser Create (0.000110)[0m   [0mINSERT INTO "users" ("name", "updated_at", "admin", "age", "email", "created_at") VALUES(NULL, '2008-09-10 17:51:50', NULL, 6, 'email6@example.com', '2008-09-10 17:51:50')[0m
+  [4;36;1mUser Load (0.000464)[0m   [0;1mSELECT * FROM "users" [0m
+
+
+Processing UsersController#index (for 0.0.0.0 at 2008-09-10 13:51:50) [GET]
+  Session ID: 
+  Parameters: {"order"=>"ascending", "action"=>"index", "controller"=>"users", "sort"=>"email"}
+  [4;35;1mUser Load (0.000896)[0m   [0mSELECT * FROM "users" ORDER BY users.email asc[0m
+Rendering template within layouts/users
+Rendering users/index
+Completed in 0.00398 (251 reqs/sec) | Rendering: 0.00244 (61%) | DB: 0.00190 (47%) | 200 OK [http://test.host/users?order=ascending&sort=email]
+  [4;36;1mUser Create (0.000573)[0m   [0;1mINSERT INTO "users" ("name", "updated_at", "admin", "age", "email", "created_at") VALUES(NULL, '2008-09-10 17:51:50', NULL, 7, 'email7@example.com', '2008-09-10 17:51:50')[0m
+  [4;35;1mUser Create (0.000117)[0m   [0mINSERT INTO "users" ("name", "updated_at", "admin", "age", "email", "created_at") VALUES(NULL, '2008-09-10 17:51:50', NULL, 8, 'email8@example.com', '2008-09-10 17:51:50')[0m
+  [4;36;1mUser Load (0.000469)[0m   [0;1mSELECT * FROM "users" [0m
+
+
+Processing UsersController#index (for 0.0.0.0 at 2008-09-10 13:51:50) [GET]
+  Session ID: 
+  Parameters: {"order"=>"descending", "action"=>"index", "controller"=>"users", "sort"=>"email"}
+  [4;35;1mUser Load (0.000990)[0m   [0mSELECT * FROM "users" ORDER BY users.email desc[0m
+Rendering template within layouts/users
+Rendering users/index
+Completed in 0.00429 (233 reqs/sec) | Rendering: 0.00274 (63%) | DB: 0.00215 (50%) | 200 OK [http://test.host/users?order=descending&sort=email]
+  [4;36;1mUser Create (0.000361)[0m   [0;1mINSERT INTO "users" ("name", "updated_at", "admin", "age", "email", "created_at") VALUES(NULL, '2008-09-10 17:51:50', NULL, 9, 'email9@example.com', '2008-09-10 17:51:50')[0m
+  [4;35;1mUser Create (0.000111)[0m   [0mINSERT INTO "users" ("name", "updated_at", "admin", "age", "email", "created_at") VALUES(NULL, '2008-09-10 17:51:50', NULL, 10, 'email10@example.com', '2008-09-10 17:51:50')[0m
+  [4;36;1mUser Load (0.000569)[0m   [0;1mSELECT * FROM "users" [0m
+
+
+Processing UsersController#index (for 0.0.0.0 at 2008-09-10 13:51:50) [GET]
+  Session ID: 
+  Parameters: {"order"=>"ascending", "action"=>"index", "controller"=>"users", "sort"=>"name"}
+  [4;35;1mUser Load (0.000876)[0m   [0mSELECT * FROM "users" ORDER BY name asc[0m
+Rendering template within layouts/users
+Rendering users/index
+Completed in 0.00373 (267 reqs/sec) | Rendering: 0.00235 (62%) | DB: 0.00192 (51%) | 200 OK [http://test.host/users?order=ascending&sort=name]
+  [4;36;1mUser Create (0.000329)[0m   [0;1mINSERT INTO "users" ("name", "updated_at", "admin", "age", "email", "created_at") VALUES(NULL, '2008-09-10 17:51:50', NULL, 11, 'email11@example.com', '2008-09-10 17:51:50')[0m
+  [4;35;1mUser Create (0.000104)[0m   [0mINSERT INTO "users" ("name", "updated_at", "admin", "age", "email", "created_at") VALUES(NULL, '2008-09-10 17:51:50', NULL, 12, 'email12@example.com', '2008-09-10 17:51:50')[0m
+  [4;36;1mUser Load (0.000477)[0m   [0;1mSELECT * FROM "users" [0m
+
+
+Processing UsersController#index (for 0.0.0.0 at 2008-09-10 13:51:50) [GET]
+  Session ID: 
+  Parameters: {"order"=>"descending", "action"=>"index", "controller"=>"users", "sort"=>"name"}
+  [4;35;1mUser Load (0.000843)[0m   [0mSELECT * FROM "users" ORDER BY name desc[0m
+Rendering template within layouts/users
+Rendering users/index
+Completed in 0.00363 (275 reqs/sec) | Rendering: 0.00229 (63%) | DB: 0.00175 (48%) | 200 OK [http://test.host/users?order=descending&sort=name]
+  [4;36;1mUser Create (0.000497)[0m   [0;1mINSERT INTO "users" ("name", "updated_at", "admin", "age", "email", "created_at") VALUES(NULL, '2008-09-10 18:00:01', NULL, 1, 'email1@example.com', '2008-09-10 18:00:01')[0m
+  [4;35;1mUser Create (0.000109)[0m   [0mINSERT INTO "users" ("name", "updated_at", "admin", "age", "email", "created_at") VALUES(NULL, '2008-09-10 18:00:01', NULL, 2, 'email2@example.com', '2008-09-10 18:00:01')[0m
+  [4;36;1mUser Load (0.000460)[0m   [0;1mSELECT * FROM "users" [0m
+
+
+Processing UsersController#index (for 0.0.0.0 at 2008-09-10 14:00:01) [GET]
+  Session ID: 
+  Parameters: {"order"=>"ascending", "action"=>"index", "controller"=>"users", "sort"=>"age"}
+  [4;35;1mUser Load (0.000898)[0m   [0mSELECT * FROM "users" ORDER BY age asc[0m
+Rendering template within layouts/users
+Rendering users/index
+Completed in 0.04602 (21 reqs/sec) | Rendering: 0.04180 (90%) | DB: 0.00196 (4%) | 200 OK [http://test.host/users?order=ascending&sort=age]
+  [4;36;1mUser Create (0.000500)[0m   [0;1mINSERT INTO "users" ("name", "updated_at", "admin", "age", "email", "created_at") VALUES(NULL, '2008-09-10 18:00:01', NULL, 3, 'email3@example.com', '2008-09-10 18:00:01')[0m
+  [4;35;1mUser Create (0.000156)[0m   [0mINSERT INTO "users" ("name", "updated_at", "admin", "age", "email", "created_at") VALUES(NULL, '2008-09-10 18:00:01', NULL, 4, 'email4@example.com', '2008-09-10 18:00:01')[0m
+  [4;36;1mUser Load (0.000650)[0m   [0;1mSELECT * FROM "users" [0m
+
+
+Processing UsersController#index (for 0.0.0.0 at 2008-09-10 14:00:01) [GET]
+  Session ID: 
+  Parameters: {"order"=>"descending", "action"=>"index", "controller"=>"users", "sort"=>"age"}
+  [4;35;1mUser Load (0.001294)[0m   [0mSELECT * FROM "users" ORDER BY age desc[0m
+Rendering template within layouts/users
+Rendering users/index
+Completed in 0.00552 (181 reqs/sec) | Rendering: 0.00339 (61%) | DB: 0.00260 (47%) | 200 OK [http://test.host/users?order=descending&sort=age]
+  [4;36;1mUser Create (0.000373)[0m   [0;1mINSERT INTO "users" ("name", "updated_at", "admin", "age", "email", "created_at") VALUES(NULL, '2008-09-10 18:00:01', NULL, 5, 'email5@example.com', '2008-09-10 18:00:01')[0m
+  [4;35;1mUser Create (0.000117)[0m   [0mINSERT INTO "users" ("name", "updated_at", "admin", "age", "email", "created_at") VALUES(NULL, '2008-09-10 18:00:01', NULL, 6, 'email6@example.com', '2008-09-10 18:00:01')[0m
+  [4;36;1mUser Load (0.000473)[0m   [0;1mSELECT * FROM "users" [0m
+
+
+Processing UsersController#index (for 0.0.0.0 at 2008-09-10 14:00:01) [GET]
+  Session ID: 
+  Parameters: {"order"=>"ascending", "action"=>"index", "controller"=>"users", "sort"=>"email"}
+  [4;35;1mUser Load (0.000851)[0m   [0mSELECT * FROM "users" ORDER BY users.email asc[0m
+Rendering template within layouts/users
+Rendering users/index
+Completed in 0.00368 (271 reqs/sec) | Rendering: 0.00233 (63%) | DB: 0.00181 (49%) | 200 OK [http://test.host/users?order=ascending&sort=email]
+  [4;36;1mUser Create (0.000701)[0m   [0;1mINSERT INTO "users" ("name", "updated_at", "admin", "age", "email", "created_at") VALUES(NULL, '2008-09-10 18:00:01', NULL, 7, 'email7@example.com', '2008-09-10 18:00:01')[0m
+  [4;35;1mUser Create (0.000167)[0m   [0mINSERT INTO "users" ("name", "updated_at", "admin", "age", "email", "created_at") VALUES(NULL, '2008-09-10 18:00:01', NULL, 8, 'email8@example.com', '2008-09-10 18:00:01')[0m
+  [4;36;1mUser Load (0.000672)[0m   [0;1mSELECT * FROM "users" [0m
+
+
+Processing UsersController#index (for 0.0.0.0 at 2008-09-10 14:00:01) [GET]
+  Session ID: 
+  Parameters: {"order"=>"descending", "action"=>"index", "controller"=>"users", "sort"=>"email"}
+  [4;35;1mUser Load (0.001316)[0m   [0mSELECT * FROM "users" ORDER BY users.email desc[0m
+Rendering template within layouts/users
+Rendering users/index
+Completed in 0.00539 (185 reqs/sec) | Rendering: 0.00326 (60%) | DB: 0.00286 (52%) | 200 OK [http://test.host/users?order=descending&sort=email]
+  [4;36;1mUser Create (0.000466)[0m   [0;1mINSERT INTO "users" ("name", "updated_at", "admin", "age", "email", "created_at") VALUES(NULL, '2008-09-10 18:00:01', NULL, 9, 'email9@example.com', '2008-09-10 18:00:01')[0m
+  [4;35;1mUser Create (0.000152)[0m   [0mINSERT INTO "users" ("name", "updated_at", "admin", "age", "email", "created_at") VALUES(NULL, '2008-09-10 18:00:01', NULL, 10, 'email10@example.com', '2008-09-10 18:00:01')[0m
+  [4;36;1mUser Load (0.000645)[0m   [0;1mSELECT * FROM "users" [0m
+
+
+Processing UsersController#index (for 0.0.0.0 at 2008-09-10 14:00:01) [GET]
+  Session ID: 
+  Parameters: {"order"=>"ascending", "action"=>"index", "controller"=>"users", "sort"=>"name"}
+  [4;35;1mUser Load (0.001368)[0m   [0mSELECT * FROM "users" ORDER BY name asc[0m
+Rendering template within layouts/users
+Rendering users/index
+Completed in 0.00575 (173 reqs/sec) | Rendering: 0.00364 (63%) | DB: 0.00263 (45%) | 200 OK [http://test.host/users?order=ascending&sort=name]
+  [4;36;1mUser Create (0.000571)[0m   [0;1mINSERT INTO "users" ("name", "updated_at", "admin", "age", "email", "created_at") VALUES(NULL, '2008-09-10 18:00:01', NULL, 11, 'email11@example.com', '2008-09-10 18:00:01')[0m
+  [4;35;1mUser Create (0.000157)[0m   [0mINSERT INTO "users" ("name", "updated_at", "admin", "age", "email", "created_at") VALUES(NULL, '2008-09-10 18:00:01', NULL, 12, 'email12@example.com', '2008-09-10 18:00:01')[0m
+  [4;36;1mUser Load (0.000654)[0m   [0;1mSELECT * FROM "users" [0m
+
+
+Processing UsersController#index (for 0.0.0.0 at 2008-09-10 14:00:01) [GET]
+  Session ID: 
+  Parameters: {"order"=>"descending", "action"=>"index", "controller"=>"users", "sort"=>"name"}
+  [4;35;1mUser Load (0.001335)[0m   [0mSELECT * FROM "users" ORDER BY name desc[0m
+Rendering template within layouts/users
+Rendering users/index
+Completed in 0.00500 (199 reqs/sec) | Rendering: 0.00293 (58%) | DB: 0.00272 (54%) | 200 OK [http://test.host/users?order=descending&sort=name]
+  [4;36;1mUser Create (0.000665)[0m   [0;1mINSERT INTO "users" ("name", "updated_at", "admin", "age", "email", "created_at") VALUES(NULL, '2008-09-10 18:00:45', NULL, 1, 'email1@example.com', '2008-09-10 18:00:45')[0m
+  [4;35;1mUser Create (0.000171)[0m   [0mINSERT INTO "users" ("name", "updated_at", "admin", "age", "email", "created_at") VALUES(NULL, '2008-09-10 18:00:45', NULL, 2, 'email2@example.com', '2008-09-10 18:00:45')[0m
+  [4;36;1mUser Load (0.000504)[0m   [0;1mSELECT * FROM "users" [0m
+
+
+Processing UsersController#index (for 0.0.0.0 at 2008-09-10 14:00:45) [GET]
+  Session ID: 
+  Parameters: {"order"=>"ascending", "action"=>"index", "controller"=>"users", "sort"=>"age"}
+  [4;35;1mUser Load (0.001087)[0m   [0mSELECT * FROM "users" ORDER BY age asc[0m
+Rendering template within layouts/users
+Rendering users/index
+Completed in 0.05637 (17 reqs/sec) | Rendering: 0.05160 (91%) | DB: 0.00243 (4%) | 200 OK [http://test.host/users?order=ascending&sort=age]
+  [4;36;1mUser Create (0.000429)[0m   [0;1mINSERT INTO "users" ("name", "updated_at", "admin", "age", "email", "created_at") VALUES(NULL, '2008-09-10 18:00:45', NULL, 3, 'email3@example.com', '2008-09-10 18:00:45')[0m
+  [4;35;1mUser Create (0.000121)[0m   [0mINSERT INTO "users" ("name", "updated_at", "admin", "age", "email", "created_at") VALUES(NULL, '2008-09-10 18:00:45', NULL, 4, 'email4@example.com', '2008-09-10 18:00:45')[0m
+  [4;36;1mUser Load (0.000466)[0m   [0;1mSELECT * FROM "users" [0m
+
+
+Processing UsersController#index (for 0.0.0.0 at 2008-09-10 14:00:45) [GET]
+  Session ID: 
+  Parameters: {"order"=>"descending", "action"=>"index", "controller"=>"users", "sort"=>"age"}
+  [4;35;1mUser Load (0.000873)[0m   [0mSELECT * FROM "users" ORDER BY age desc[0m
+Rendering template within layouts/users
+Rendering users/index
+Completed in 0.00382 (261 reqs/sec) | Rendering: 0.00240 (62%) | DB: 0.00189 (49%) | 200 OK [http://test.host/users?order=descending&sort=age]
+  [4;36;1mUser Create (0.000348)[0m   [0;1mINSERT INTO "users" ("name", "updated_at", "admin", "age", "email", "created_at") VALUES(NULL, '2008-09-10 18:00:45', NULL, 5, 'email5@example.com', '2008-09-10 18:00:45')[0m
+  [4;35;1mUser Create (0.000106)[0m   [0mINSERT INTO "users" ("name", "updated_at", "admin", "age", "email", "created_at") VALUES(NULL, '2008-09-10 18:00:45', NULL, 6, 'email6@example.com', '2008-09-10 18:00:45')[0m
+  [4;36;1mUser Load (0.000464)[0m   [0;1mSELECT * FROM "users" [0m
+
+
+Processing UsersController#index (for 0.0.0.0 at 2008-09-10 14:00:45) [GET]
+  Session ID: 
+  Parameters: {"order"=>"ascending", "action"=>"index", "controller"=>"users", "sort"=>"email"}
+  [4;35;1mUser Load (0.000822)[0m   [0mSELECT * FROM "users" ORDER BY users.email asc[0m
+Rendering template within layouts/users
+Rendering users/index
+Completed in 0.00363 (275 reqs/sec) | Rendering: 0.00231 (63%) | DB: 0.00174 (47%) | 200 OK [http://test.host/users?order=ascending&sort=email]
+  [4;36;1mUser Create (0.000708)[0m   [0;1mINSERT INTO "users" ("name", "updated_at", "admin", "age", "email", "created_at") VALUES(NULL, '2008-09-10 18:00:45', NULL, 7, 'email7@example.com', '2008-09-10 18:00:45')[0m
+  [4;35;1mUser Create (0.000165)[0m   [0mINSERT INTO "users" ("name", "updated_at", "admin", "age", "email", "created_at") VALUES(NULL, '2008-09-10 18:00:45', NULL, 8, 'email8@example.com', '2008-09-10 18:00:45')[0m
+  [4;36;1mUser Load (0.000504)[0m   [0;1mSELECT * FROM "users" [0m
+
+
+Processing UsersController#index (for 0.0.0.0 at 2008-09-10 14:00:45) [GET]
+  Session ID: 
+  Parameters: {"order"=>"descending", "action"=>"index", "controller"=>"users", "sort"=>"email"}
+  [4;35;1mUser Load (0.001022)[0m   [0mSELECT * FROM "users" ORDER BY users.email desc[0m
+Rendering template within layouts/users
+Rendering users/index
+Completed in 0.00450 (222 reqs/sec) | Rendering: 0.00259 (57%) | DB: 0.00240 (53%) | 200 OK [http://test.host/users?order=descending&sort=email]
+  [4;36;1mUser Create (0.000525)[0m   [0;1mINSERT INTO "users" ("name", "updated_at", "admin", "age", "email", "created_at") VALUES(NULL, '2008-09-10 18:00:45', NULL, 9, 'email9@example.com', '2008-09-10 18:00:45')[0m
+  [4;35;1mUser Create (0.000163)[0m   [0mINSERT INTO "users" ("name", "updated_at", "admin", "age", "email", "created_at") VALUES(NULL, '2008-09-10 18:00:45', NULL, 10, 'email10@example.com', '2008-09-10 18:00:45')[0m
+  [4;36;1mUser Load (0.000722)[0m   [0;1mSELECT * FROM "users" [0m
+
+
+Processing UsersController#index (for 0.0.0.0 at 2008-09-10 14:00:45) [GET]
+  Session ID: 
+  Parameters: {"order"=>"ascending", "action"=>"index", "controller"=>"users", "sort"=>"name"}
+  [4;35;1mUser Load (0.001282)[0m   [0mSELECT * FROM "users" ORDER BY name asc[0m
+Rendering template within layouts/users
+Rendering users/index
+Completed in 0.00540 (185 reqs/sec) | Rendering: 0.00338 (62%) | DB: 0.00269 (49%) | 200 OK [http://test.host/users?order=ascending&sort=name]
+  [4;36;1mUser Create (0.000458)[0m   [0;1mINSERT INTO "users" ("name", "updated_at", "admin", "age", "email", "created_at") VALUES(NULL, '2008-09-10 18:00:45', NULL, 11, 'email11@example.com', '2008-09-10 18:00:45')[0m
+  [4;35;1mUser Create (0.000167)[0m   [0mINSERT INTO "users" ("name", "updated_at", "admin", "age", "email", "created_at") VALUES(NULL, '2008-09-10 18:00:45', NULL, 12, 'email12@example.com', '2008-09-10 18:00:45')[0m
+  [4;36;1mUser Load (0.000848)[0m   [0;1mSELECT * FROM "users" [0m
+
+
+Processing UsersController#index (for 0.0.0.0 at 2008-09-10 14:00:45) [GET]
+  Session ID: 
+  Parameters: {"order"=>"descending", "action"=>"index", "controller"=>"users", "sort"=>"name"}
+  [4;35;1mUser Load (0.001683)[0m   [0mSELECT * FROM "users" ORDER BY name desc[0m
+Rendering template within layouts/users
+Rendering users/index
+Completed in 0.01103 (90 reqs/sec) | Rendering: 0.00827 (74%) | DB: 0.00316 (28%) | 200 OK [http://test.host/users?order=descending&sort=name]
+  [4;36;1mUser Create (0.000506)[0m   [0;1mINSERT INTO "users" ("name", "updated_at", "admin", "age", "email", "created_at") VALUES(NULL, '2008-09-10 18:31:08', NULL, 1, 'email1@example.com', '2008-09-10 18:31:08')[0m
+  [4;35;1mUser Create (0.000107)[0m   [0mINSERT INTO "users" ("name", "updated_at", "admin", "age", "email", "created_at") VALUES(NULL, '2008-09-10 18:31:08', NULL, 2, 'email2@example.com', '2008-09-10 18:31:08')[0m
+  [4;36;1mUser Load (0.000450)[0m   [0;1mSELECT * FROM "users" [0m
+
+
+Processing UsersController#index (for 0.0.0.0 at 2008-09-10 14:31:08) [GET]
+  Session ID: 
+  Parameters: {"order"=>"ascending", "action"=>"index", "controller"=>"users", "sort"=>"age"}
+  [4;35;1mUser Load (0.000928)[0m   [0mSELECT * FROM "users" ORDER BY age asc[0m
+Rendering template within layouts/users
+Rendering users/index
+Completed in 0.07848 (12 reqs/sec) | Rendering: 0.07423 (94%) | DB: 0.00199 (2%) | 200 OK [http://test.host/users?order=ascending&sort=age]
+  [4;36;1mUser Create (0.000426)[0m   [0;1mINSERT INTO "users" ("name", "updated_at", "admin", "age", "email", "created_at") VALUES(NULL, '2008-09-10 18:31:08', NULL, 3, 'email3@example.com', '2008-09-10 18:31:08')[0m
+  [4;35;1mUser Create (0.000138)[0m   [0mINSERT INTO "users" ("name", "updated_at", "admin", "age", "email", "created_at") VALUES(NULL, '2008-09-10 18:31:08', NULL, 4, 'email4@example.com', '2008-09-10 18:31:08')[0m
+  [4;36;1mUser Load (0.000516)[0m   [0;1mSELECT * FROM "users" [0m
+
+
+Processing UsersController#index (for 0.0.0.0 at 2008-09-10 14:31:08) [GET]
+  Session ID: 
+  Parameters: {"order"=>"descending", "action"=>"index", "controller"=>"users", "sort"=>"age"}
+  [4;35;1mUser Load (0.000887)[0m   [0mSELECT * FROM "users" ORDER BY age desc[0m
+Rendering template within layouts/users
+Rendering users/index
+Completed in 0.00400 (250 reqs/sec) | Rendering: 0.00260 (64%) | DB: 0.00197 (49%) | 200 OK [http://test.host/users?order=descending&sort=age]
+  [4;36;1mUser Create (0.000350)[0m   [0;1mINSERT INTO "users" ("name", "updated_at", "admin", "age", "email", "created_at") VALUES(NULL, '2008-09-10 18:31:08', NULL, 5, 'email5@example.com', '2008-09-10 18:31:08')[0m
+  [4;35;1mUser Create (0.000106)[0m   [0mINSERT INTO "users" ("name", "updated_at", "admin", "age", "email", "created_at") VALUES(NULL, '2008-09-10 18:31:08', NULL, 6, 'email6@example.com', '2008-09-10 18:31:08')[0m
+  [4;36;1mUser Load (0.000468)[0m   [0;1mSELECT * FROM "users" [0m
+
+
+Processing UsersController#index (for 0.0.0.0 at 2008-09-10 14:31:08) [GET]
+  Session ID: 
+  Parameters: {"order"=>"ascending", "action"=>"index", "controller"=>"users", "sort"=>"email"}
+  [4;35;1mUser Load (0.000867)[0m   [0mSELECT * FROM "users" ORDER BY users.email asc[0m
+Rendering template within layouts/users
+Rendering users/index
+Completed in 0.00641 (156 reqs/sec) | Rendering: 0.00483 (75%) | DB: 0.00179 (27%) | 200 OK [http://test.host/users?order=ascending&sort=email]
+  [4;36;1mUser Create (0.000425)[0m   [0;1mINSERT INTO "users" ("name", "updated_at", "admin", "age", "email", "created_at") VALUES(NULL, '2008-09-10 18:31:08', NULL, 7, 'email7@example.com', '2008-09-10 18:31:08')[0m
+  [4;35;1mUser Create (0.000121)[0m   [0mINSERT INTO "users" ("name", "updated_at", "admin", "age", "email", "created_at") VALUES(NULL, '2008-09-10 18:31:08', NULL, 8, 'email8@example.com', '2008-09-10 18:31:08')[0m
+  [4;36;1mUser Load (0.000489)[0m   [0;1mSELECT * FROM "users" [0m
+
+
+Processing UsersController#index (for 0.0.0.0 at 2008-09-10 14:31:08) [GET]
+  Session ID: 
+  Parameters: {"order"=>"descending", "action"=>"index", "controller"=>"users", "sort"=>"email"}
+  [4;35;1mUser Load (0.000960)[0m   [0mSELECT * FROM "users" ORDER BY users.email desc[0m
+Rendering template within layouts/users
+Rendering users/index
+Completed in 0.00405 (247 reqs/sec) | Rendering: 0.00252 (62%) | DB: 0.00200 (49%) | 200 OK [http://test.host/users?order=descending&sort=email]
+  [4;36;1mUser Create (0.000349)[0m   [0;1mINSERT INTO "users" ("name", "updated_at", "admin", "age", "email", "created_at") VALUES(NULL, '2008-09-10 18:31:08', NULL, 9, 'email9@example.com', '2008-09-10 18:31:08')[0m
+  [4;35;1mUser Create (0.000106)[0m   [0mINSERT INTO "users" ("name", "updated_at", "admin", "age", "email", "created_at") VALUES(NULL, '2008-09-10 18:31:08', NULL, 10, 'email10@example.com', '2008-09-10 18:31:08')[0m
+  [4;36;1mUser Load (0.000458)[0m   [0;1mSELECT * FROM "users" [0m
+
+
+Processing UsersController#index (for 0.0.0.0 at 2008-09-10 14:31:08) [GET]
+  Session ID: 
+  Parameters: {"order"=>"ascending", "action"=>"index", "controller"=>"users", "sort"=>"name"}
+  [4;35;1mUser Load (0.000920)[0m   [0mSELECT * FROM "users" ORDER BY name asc[0m
+Rendering template within layouts/users
+Rendering users/index
+Completed in 0.00443 (225 reqs/sec) | Rendering: 0.00290 (65%) | DB: 0.00183 (41%) | 200 OK [http://test.host/users?order=ascending&sort=name]
+  [4;36;1mUser Create (0.000769)[0m   [0;1mINSERT INTO "users" ("name", "updated_at", "admin", "age", "email", "created_at") VALUES(NULL, '2008-09-10 18:31:08', NULL, 11, 'email11@example.com', '2008-09-10 18:31:08')[0m
+  [4;35;1mUser Create (0.000253)[0m   [0mINSERT INTO "users" ("name", "updated_at", "admin", "age", "email", "created_at") VALUES(NULL, '2008-09-10 18:31:08', NULL, 12, 'email12@example.com', '2008-09-10 18:31:08')[0m
+  [4;36;1mUser Load (0.000611)[0m   [0;1mSELECT * FROM "users" [0m
+
+
+Processing UsersController#index (for 0.0.0.0 at 2008-09-10 14:31:08) [GET]
+  Session ID: 
+  Parameters: {"order"=>"descending", "action"=>"index", "controller"=>"users", "sort"=>"name"}
+  [4;35;1mUser Load (0.001017)[0m   [0mSELECT * FROM "users" ORDER BY name desc[0m
+Rendering template within layouts/users
+Rendering users/index
+Completed in 0.00567 (176 reqs/sec) | Rendering: 0.00297 (52%) | DB: 0.00265 (46%) | 200 OK [http://test.host/users?order=descending&sort=name]
+  [4;36;1mUser Create (0.000522)[0m   [0;1mINSERT INTO "users" ("name", "updated_at", "admin", "age", "email", "created_at") VALUES(NULL, '2008-09-10 18:38:28', NULL, 1, 'email1@example.com', '2008-09-10 18:38:28')[0m
+  [4;35;1mUser Create (0.000106)[0m   [0mINSERT INTO "users" ("name", "updated_at", "admin", "age", "email", "created_at") VALUES(NULL, '2008-09-10 18:38:28', NULL, 2, 'email2@example.com', '2008-09-10 18:38:28')[0m
+  [4;36;1mUser Load (0.000475)[0m   [0;1mSELECT * FROM "users" [0m
+
+
+Processing UsersController#index (for 0.0.0.0 at 2008-09-10 14:38:28) [GET]
+  Session ID: 
+  Parameters: {"order"=>"ascending", "action"=>"index", "controller"=>"users", "sort"=>"age"}
+  [4;35;1mUser Load (0.001024)[0m   [0mSELECT * FROM "users" ORDER BY age asc[0m
+Rendering template within layouts/users
+Rendering users/index
+Completed in 0.04506 (22 reqs/sec) | Rendering: 0.04063 (90%) | DB: 0.00213 (4%) | 200 OK [http://test.host/users?order=ascending&sort=age]
+  [4;36;1mUser Create (0.000418)[0m   [0;1mINSERT INTO "users" ("name", "updated_at", "admin", "age", "email", "created_at") VALUES(NULL, '2008-09-10 18:38:28', NULL, 3, 'email3@example.com', '2008-09-10 18:38:28')[0m
+  [4;35;1mUser Create (0.000161)[0m   [0mINSERT INTO "users" ("name", "updated_at", "admin", "age", "email", "created_at") VALUES(NULL, '2008-09-10 18:38:28', NULL, 4, 'email4@example.com', '2008-09-10 18:38:28')[0m
+  [4;36;1mUser Load (0.000513)[0m   [0;1mSELECT * FROM "users" [0m
+
+
+Processing UsersController#index (for 0.0.0.0 at 2008-09-10 14:38:28) [GET]
+  Session ID: 
+  Parameters: {"order"=>"descending", "action"=>"index", "controller"=>"users", "sort"=>"age"}
+  [4;35;1mUser Load (0.000898)[0m   [0mSELECT * FROM "users" ORDER BY age desc[0m
+Rendering template within layouts/users
+Rendering users/index
+Completed in 0.00407 (245 reqs/sec) | Rendering: 0.00265 (64%) | DB: 0.00199 (48%) | 200 OK [http://test.host/users?order=descending&sort=age]
+  [4;36;1mUser Create (0.000489)[0m   [0;1mINSERT INTO "users" ("name", "updated_at", "admin", "age", "email", "created_at") VALUES(NULL, '2008-09-10 18:38:28', NULL, 5, 'email5@example.com', '2008-09-10 18:38:28')[0m
+  [4;35;1mUser Create (0.000150)[0m   [0mINSERT INTO "users" ("name", "updated_at", "admin", "age", "email", "created_at") VALUES(NULL, '2008-09-10 18:38:28', NULL, 6, 'email6@example.com', '2008-09-10 18:38:28')[0m
+  [4;36;1mUser Load (0.000481)[0m   [0;1mSELECT * FROM "users" [0m
+
+
+Processing UsersController#index (for 0.0.0.0 at 2008-09-10 14:38:28) [GET]
+  Session ID: 
+  Parameters: {"order"=>"ascending", "action"=>"index", "controller"=>"users", "sort"=>"email"}
+  [4;35;1mUser Load (0.000874)[0m   [0mSELECT * FROM "users" ORDER BY users.email asc[0m
+Rendering template within layouts/users
+Rendering users/index
+Completed in 0.00398 (251 reqs/sec) | Rendering: 0.00259 (65%) | DB: 0.00199 (50%) | 200 OK [http://test.host/users?order=ascending&sort=email]
+  [4;36;1mUser Create (0.000512)[0m   [0;1mINSERT INTO "users" ("name", "updated_at", "admin", "age", "email", "created_at") VALUES(NULL, '2008-09-10 18:38:28', NULL, 7, 'email7@example.com', '2008-09-10 18:38:28')[0m
+  [4;35;1mUser Create (0.000150)[0m   [0mINSERT INTO "users" ("name", "updated_at", "admin", "age", "email", "created_at") VALUES(NULL, '2008-09-10 18:38:28', NULL, 8, 'email8@example.com', '2008-09-10 18:38:28')[0m
+  [4;36;1mUser Load (0.000659)[0m   [0;1mSELECT * FROM "users" [0m
+
+
+Processing UsersController#index (for 0.0.0.0 at 2008-09-10 14:38:28) [GET]
+  Session ID: 
+  Parameters: {"order"=>"descending", "action"=>"index", "controller"=>"users", "sort"=>"email"}
+  [4;35;1mUser Load (0.001290)[0m   [0mSELECT * FROM "users" ORDER BY users.email desc[0m
+Rendering template within layouts/users
+Rendering users/index
+Completed in 0.00555 (180 reqs/sec) | Rendering: 0.00353 (63%) | DB: 0.00261 (47%) | 200 OK [http://test.host/users?order=descending&sort=email]
+  [4;36;1mUser Create (0.000510)[0m   [0;1mINSERT INTO "users" ("name", "updated_at", "admin", "age", "email", "created_at") VALUES(NULL, '2008-09-10 18:38:28', NULL, 9, 'email9@example.com', '2008-09-10 18:38:28')[0m
+  [4;35;1mUser Create (0.000153)[0m   [0mINSERT INTO "users" ("name", "updated_at", "admin", "age", "email", "created_at") VALUES(NULL, '2008-09-10 18:38:28', NULL, 10, 'email10@example.com', '2008-09-10 18:38:28')[0m
+  [4;36;1mUser Load (0.000693)[0m   [0;1mSELECT * FROM "users" [0m
+
+
+Processing UsersController#index (for 0.0.0.0 at 2008-09-10 14:38:28) [GET]
+  Session ID: 
+  Parameters: {"order"=>"ascending", "action"=>"index", "controller"=>"users", "sort"=>"name"}
+  [4;35;1mUser Load (0.001264)[0m   [0mSELECT * FROM "users" ORDER BY name asc[0m
+Rendering template within layouts/users
+Rendering users/index
+Completed in 0.00527 (189 reqs/sec) | Rendering: 0.00327 (62%) | DB: 0.00262 (49%) | 200 OK [http://test.host/users?order=ascending&sort=name]
+  [4;36;1mUser Create (0.000482)[0m   [0;1mINSERT INTO "users" ("name", "updated_at", "admin", "age", "email", "created_at") VALUES(NULL, '2008-09-10 18:38:29', NULL, 11, 'email11@example.com', '2008-09-10 18:38:29')[0m
+  [4;35;1mUser Create (0.000152)[0m   [0mINSERT INTO "users" ("name", "updated_at", "admin", "age", "email", "created_at") VALUES(NULL, '2008-09-10 18:38:29', NULL, 12, 'email12@example.com', '2008-09-10 18:38:29')[0m
+  [4;36;1mUser Load (0.000629)[0m   [0;1mSELECT * FROM "users" [0m
+
+
+Processing UsersController#index (for 0.0.0.0 at 2008-09-10 14:38:29) [GET]
+  Session ID: 
+  Parameters: {"order"=>"descending", "action"=>"index", "controller"=>"users", "sort"=>"name"}
+  [4;35;1mUser Load (0.001061)[0m   [0mSELECT * FROM "users" ORDER BY name desc[0m
+Rendering template within layouts/users
+Rendering users/index
+Completed in 0.00413 (242 reqs/sec) | Rendering: 0.00234 (56%) | DB: 0.00232 (56%) | 200 OK [http://test.host/users?order=descending&sort=name]
+  [4;36;1mUser Create (0.000493)[0m   [0;1mINSERT INTO "users" ("name", "updated_at", "admin", "age", "email", "created_at") VALUES(NULL, '2008-09-10 18:41:26', NULL, 1, 'email1@example.com', '2008-09-10 18:41:26')[0m
+  [4;35;1mUser Create (0.000114)[0m   [0mINSERT INTO "users" ("name", "updated_at", "admin", "age", "email", "created_at") VALUES(NULL, '2008-09-10 18:41:26', NULL, 2, 'email2@example.com', '2008-09-10 18:41:26')[0m
+  [4;36;1mUser Load (0.000465)[0m   [0;1mSELECT * FROM "users" [0m
+
+
+Processing UsersController#index (for 0.0.0.0 at 2008-09-10 14:41:26) [GET]
+  Session ID: 
+  Parameters: {"order"=>"ascending", "action"=>"index", "controller"=>"users", "sort"=>"age"}
+  [4;35;1mUser Load (0.000931)[0m   [0mSELECT * FROM "users" ORDER BY age asc[0m
+Rendering template within layouts/users
+Rendering users/index
+Completed in 0.04509 (22 reqs/sec) | Rendering: 0.04082 (90%) | DB: 0.00200 (4%) | 200 OK [http://test.host/users?order=ascending&sort=age]
+  [4;36;1mUser Create (0.000492)[0m   [0;1mINSERT INTO "users" ("name", "updated_at", "admin", "age", "email", "created_at") VALUES(NULL, '2008-09-10 18:41:26', NULL, 3, 'email3@example.com', '2008-09-10 18:41:26')[0m
+  [4;35;1mUser Create (0.000156)[0m   [0mINSERT INTO "users" ("name", "updated_at", "admin", "age", "email", "created_at") VALUES(NULL, '2008-09-10 18:41:26', NULL, 4, 'email4@example.com', '2008-09-10 18:41:26')[0m
+  [4;36;1mUser Load (0.000664)[0m   [0;1mSELECT * FROM "users" [0m
+
+
+Processing UsersController#index (for 0.0.0.0 at 2008-09-10 14:41:26) [GET]
+  Session ID: 
+  Parameters: {"order"=>"descending", "action"=>"index", "controller"=>"users", "sort"=>"age"}
+  [4;35;1mUser Load (0.001234)[0m   [0mSELECT * FROM "users" ORDER BY age desc[0m
+Rendering template within layouts/users
+Rendering users/index
+Completed in 0.00477 (209 reqs/sec) | Rendering: 0.00288 (60%) | DB: 0.00255 (53%) | 200 OK [http://test.host/users?order=descending&sort=age]
+  [4;36;1mUser Create (0.000504)[0m   [0;1mINSERT INTO "users" ("name", "updated_at", "admin", "age", "email", "created_at") VALUES(NULL, '2008-09-10 18:41:26', NULL, 5, 'email5@example.com', '2008-09-10 18:41:26')[0m
+  [4;35;1mUser Create (0.000236)[0m   [0mINSERT INTO "users" ("name", "updated_at", "admin", "age", "email", "created_at") VALUES(NULL, '2008-09-10 18:41:26', NULL, 6, 'email6@example.com', '2008-09-10 18:41:26')[0m
+  [4;36;1mUser Load (0.000681)[0m   [0;1mSELECT * FROM "users" [0m
+
+
+Processing UsersController#index (for 0.0.0.0 at 2008-09-10 14:41:26) [GET]
+  Session ID: 
+  Parameters: {"order"=>"ascending", "action"=>"index", "controller"=>"users", "sort"=>"email"}
+  [4;35;1mUser Load (0.001696)[0m   [0mSELECT * FROM "users" ORDER BY users.email asc[0m
+Rendering template within layouts/users
+Rendering users/index
+Completed in 0.00651 (153 reqs/sec) | Rendering: 0.00376 (57%) | DB: 0.00312 (47%) | 200 OK [http://test.host/users?order=ascending&sort=email]
+  [4;36;1mUser Create (0.000405)[0m   [0;1mINSERT INTO "users" ("name", "updated_at", "admin", "age", "email", "created_at") VALUES(NULL, '2008-09-10 18:41:26', NULL, 7, 'email7@example.com', '2008-09-10 18:41:26')[0m
+  [4;35;1mUser Create (0.000122)[0m   [0mINSERT INTO "users" ("name", "updated_at", "admin", "age", "email", "created_at") VALUES(NULL, '2008-09-10 18:41:26', NULL, 8, 'email8@example.com', '2008-09-10 18:41:26')[0m
+  [4;36;1mUser Load (0.000487)[0m   [0;1mSELECT * FROM "users" [0m
+
+
+Processing UsersController#index (for 0.0.0.0 at 2008-09-10 14:41:26) [GET]
+  Session ID: 
+  Parameters: {"order"=>"descending", "action"=>"index", "controller"=>"users", "sort"=>"email"}
+  [4;35;1mUser Load (0.000889)[0m   [0mSELECT * FROM "users" ORDER BY users.email desc[0m
+Rendering template within layouts/users
+Rendering users/index
+Completed in 0.00391 (255 reqs/sec) | Rendering: 0.00250 (64%) | DB: 0.00190 (48%) | 200 OK [http://test.host/users?order=descending&sort=email]
+  [4;36;1mUser Create (0.000739)[0m   [0;1mINSERT INTO "users" ("name", "updated_at", "admin", "age", "email", "created_at") VALUES(NULL, '2008-09-10 18:41:45', NULL, 1, 'email1@example.com', '2008-09-10 18:41:45')[0m
+  [4;35;1mUser Create (0.000112)[0m   [0mINSERT INTO "users" ("name", "updated_at", "admin", "age", "email", "created_at") VALUES(NULL, '2008-09-10 18:41:45', NULL, 2, 'email2@example.com', '2008-09-10 18:41:45')[0m
+  [4;36;1mUser Load (0.000464)[0m   [0;1mSELECT * FROM "users" [0m
+
+
+Processing UsersController#index (for 0.0.0.0 at 2008-09-10 14:41:45) [GET]
+  Session ID: 
+  Parameters: {"order"=>"ascending", "action"=>"index", "controller"=>"users", "sort"=>"age"}
+  [4;35;1mUser Load (0.001002)[0m   [0mSELECT * FROM "users" ORDER BY age asc[0m
+Rendering template within layouts/users
+Rendering users/index
+Completed in 0.04474 (22 reqs/sec) | Rendering: 0.04047 (90%) | DB: 0.00232 (5%) | 200 OK [http://test.host/users?order=ascending&sort=age]
+  [4;36;1mUser Create (0.000496)[0m   [0;1mINSERT INTO "users" ("name", "updated_at", "admin", "age", "email", "created_at") VALUES(NULL, '2008-09-10 18:41:45', NULL, 3, 'email3@example.com', '2008-09-10 18:41:45')[0m
+  [4;35;1mUser Create (0.000155)[0m   [0mINSERT INTO "users" ("name", "updated_at", "admin", "age", "email", "created_at") VALUES(NULL, '2008-09-10 18:41:45', NULL, 4, 'email4@example.com', '2008-09-10 18:41:45')[0m
+  [4;36;1mUser Load (0.000676)[0m   [0;1mSELECT * FROM "users" [0m
+
+
+Processing UsersController#index (for 0.0.0.0 at 2008-09-10 14:41:45) [GET]
+  Session ID: 
+  Parameters: {"order"=>"descending", "action"=>"index", "controller"=>"users", "sort"=>"age"}
+  [4;35;1mUser Load (0.001267)[0m   [0mSELECT * FROM "users" ORDER BY age desc[0m
+Rendering template within layouts/users
+Rendering users/index
+Completed in 0.00517 (193 reqs/sec) | Rendering: 0.00316 (61%) | DB: 0.00259 (50%) | 200 OK [http://test.host/users?order=descending&sort=age]
+  [4;36;1mUser Create (0.000344)[0m   [0;1mINSERT INTO "users" ("name", "updated_at", "admin", "age", "email", "created_at") VALUES(NULL, '2008-09-10 18:41:45', NULL, 5, 'email5@example.com', '2008-09-10 18:41:45')[0m
+  [4;35;1mUser Create (0.000112)[0m   [0mINSERT INTO "users" ("name", "updated_at", "admin", "age", "email", "created_at") VALUES(NULL, '2008-09-10 18:41:45', NULL, 6, 'email6@example.com', '2008-09-10 18:41:45')[0m
+  [4;36;1mUser Load (0.000465)[0m   [0;1mSELECT * FROM "users" [0m
+
+
+Processing UsersController#index (for 0.0.0.0 at 2008-09-10 14:41:45) [GET]
+  Session ID: 
+  Parameters: {"order"=>"ascending", "action"=>"index", "controller"=>"users", "sort"=>"email"}
+  [4;35;1mUser Load (0.000834)[0m   [0mSELECT * FROM "users" ORDER BY users.email asc[0m
+Rendering template within layouts/users
+Rendering users/index
+Completed in 0.00358 (279 reqs/sec) | Rendering: 0.00226 (63%) | DB: 0.00175 (48%) | 200 OK [http://test.host/users?order=ascending&sort=email]
+  [4;36;1mUser Create (0.000371)[0m   [0;1mINSERT INTO "users" ("name", "updated_at", "admin", "age", "email", "created_at") VALUES(NULL, '2008-09-10 18:41:45', NULL, 7, 'email7@example.com', '2008-09-10 18:41:45')[0m
+  [4;35;1mUser Create (0.000106)[0m   [0mINSERT INTO "users" ("name", "updated_at", "admin", "age", "email", "created_at") VALUES(NULL, '2008-09-10 18:41:45', NULL, 8, 'email8@example.com', '2008-09-10 18:41:45')[0m
+  [4;36;1mUser Load (0.000475)[0m   [0;1mSELECT * FROM "users" [0m
+
+
+Processing UsersController#index (for 0.0.0.0 at 2008-09-10 14:41:45) [GET]
+  Session ID: 
+  Parameters: {"order"=>"descending", "action"=>"index", "controller"=>"users", "sort"=>"email"}
+  [4;35;1mUser Load (0.000912)[0m   [0mSELECT * FROM "users" ORDER BY users.email desc[0m
+Rendering template within layouts/users
+Rendering users/index
+Completed in 0.00390 (256 reqs/sec) | Rendering: 0.00236 (60%) | DB: 0.00186 (47%) | 200 OK [http://test.host/users?order=descending&sort=email]

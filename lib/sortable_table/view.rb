@@ -1,6 +1,6 @@
 class ActionView::Base
   
-  def sortable_tag(*args)
+  def sortable_table_header(*args)
     opts = args.extract_options!
     
     inner_html = args

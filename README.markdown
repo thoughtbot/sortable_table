@@ -1,5 +1,5 @@
-Sortable
-========
+Sortable Table
+==============
 
 Thanks to Joe Ferris and Boston.rb.
 
@@ -51,8 +51,8 @@ And some sugar for your views:
 
 		%table
 		  %tr
-		    = sortable_tag :name => 'Name', :sort => 'name'
-		    = sortable_tag :name => 'E-mail', :sort => 'email'
+		    = sortable_table_header :name => 'Name', :sort => 'name'
+		    = sortable_table_header :name => 'E-mail', :sort => 'email'
 
 		  - @users.each do |each|
 		    %tr

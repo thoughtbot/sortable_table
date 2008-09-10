@@ -12,7 +12,7 @@ end
 
 class Test::Unit::TestCase
   
-  # Test::Unit::TestCase.quiet_backtrace = false
+  Test::Unit::TestCase.quiet_backtrace = false
   self.backtrace_silencers << :rails_vendor
   self.backtrace_filters   << :rails_root
   
