@@ -56,8 +56,8 @@ And some sugar for your views:
 
 		%table
 		  %tr
-		    = sortable_table_header :name => 'Name', :sort => 'name'
-		    = sortable_table_header :name => 'E-mail', :sort => 'email'
+		    = sortable_table_header 'Name', :sort => 'name'
+		    = sortable_table_header 'E-mail', :sort => 'email'
 
 		  - @users.each do |each|
 		    %tr

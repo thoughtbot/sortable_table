@@ -1,6 +1,6 @@
 class Test::Unit::TestCase
   
-  def self.should_sort_by(attribute, &block)
+  def self.should_sort_by(attribute, params = {}, &block)
     collection = self.name.underscore.gsub(/_controller_test/, '')
     collection.slice!(0..collection.rindex('/')) if collection.include?('/')
     collection = collection.to_sym
