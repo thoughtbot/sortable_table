@@ -1,22 +1,9 @@
 require 'rake'
 require 'rake/testtask'
-require 'rake/rdoctask'
 
-desc 'Default: run unit tests.'
-task :default => :test
-
-desc 'Test the sortable plugin.'
-Rake::TestTask.new(:test) do |t|
+test_files_pattern = 'test/rails_root/test/{unit,functional,other}/**/*_test.rb'
+Rake::TestTask.new do |t|
   t.libs << 'lib'
-  t.pattern = 'test/rails_root/test/**/*_test.rb'
-  t.verbose = true
-end
-
-desc 'Generate documentation for the sortable plugin.'
-Rake::RDocTask.new(:rdoc) do |rdoc|
-  rdoc.rdoc_dir = 'rdoc'
-  rdoc.title    = 'Sortable'
-  rdoc.options << '--line-numbers' << '--inline-source'
-  rdoc.rdoc_files.include('README')
-  rdoc.rdoc_files.include('lib/**/*.rb')
+  t.pattern = test_files_pattern
+  t.verbose = false
 end
