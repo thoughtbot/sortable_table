@@ -34,7 +34,7 @@ class ActionView::Base
   
   def class_name_for_sortable_table_header_tag(opts)
     if default_sort_to_most_recent? opts
-      class_name = 'descending '
+      class_name = 'descending'
     elsif re_sort? opts
       class_name = params[:order]
     else
@@ -58,7 +58,7 @@ class ActionView::Base
   end
   
   def default_sort_to_most_recent?(opts)
-    params[:sort].nil? && opts[:sort] == 'date'
+    params[:sort].nil? && opts[:sort] == @sorted_column
   end
   
   def re_sort?(opts)

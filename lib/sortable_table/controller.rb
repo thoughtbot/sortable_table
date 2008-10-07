@@ -9,8 +9,10 @@ class ActionController::Base
       column    = params[:sort] || 'created_on'
       if params[:sort] && acceptable_columns.include?(column)
         column = mappings[column.to_sym] || column
+        @sorted_column = column
         "#{column} #{direction}"
       else
+        @sorted_column = acceptable_columns.first
         "#{acceptable_columns.first} #{default_sort_direction(default)}"
       end
     end
