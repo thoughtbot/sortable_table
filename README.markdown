@@ -6,7 +6,7 @@ Rails plugin to sort tables of ActiveRecord data.
 Install
 -------
 
-    script/plugin install git@github.com:dancroak/sortable_table.git
+    script/plugin install git://github.com/dancroak/sortable_table.git
 
 Conventions
 -----------
