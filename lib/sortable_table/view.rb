@@ -34,12 +34,13 @@ class ActionView::Base
   
   def class_name_for_sortable_table_header_tag(opts)
     if default_sort_to_most_recent? opts
-      'descending'
+      class_name = 'descending '
     elsif re_sort? opts
-      params[:order]
+      class_name = params[:order]
     else
-      nil
+      class_name = ""
     end
+    class_name << " #{opts[:class_name]}"
   end
   
   def sortable_url(opts)
