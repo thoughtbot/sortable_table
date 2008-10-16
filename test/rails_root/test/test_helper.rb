@@ -3,17 +3,7 @@ require File.expand_path(File.dirname(__FILE__) + "/../config/environment")
 require 'test_help'
 require 'rubygems'
 
-gem 'mocha'
-gem 'thoughtbot-quietbacktrace'
-gem 'thoughtbot-shoulda'
-gem 'thoughtbot-factory_girl'
-gem 'redgreen'
-
-require 'mocha'
-require 'quietbacktrace'
-require 'shoulda'
-require 'factory_girl'
-require 'redgreen'
+require File.expand_path(File.dirname(__FILE__) + '/helper_testcase')
 
 Dir[File.join(RAILS_ROOT, 'test', 'factories', '*.rb')].each do |file|
   require file
