@@ -1,20 +1,34 @@
-Sortable Table
-==============
+h1. Sortable Table
 
-Rails plugin to sort tables of ActiveRecord data.
+Sort HTML tables in a Rails app.
 
-Install
--------
+h2. Install
 
     script/plugin install git://github.com/dancroak/sortable_table.git
 
-Conventions
------------
+In test/test_helper.rb: 
+
+    class Test::Unit::TestCase
+      include SortableTable::Test::TestHelper
+    end
+
+In app/controllers/application_controller.rb:
+
+    class ApplicationController < ActionController::Base
+      include SortableTable::App::Controllers::ApplicationController
+    end
+
+In app/helpers/application_helper.rb:
+
+    module ApplicationHelper
+      include SortableTable::App::Helpers::ApplicationHelper
+    end
+
+h2. Conventions
 
 params[:sort] and params[:order]
 
-Examples
---------
+h2. Examples
 
 Use the sortable_attributes macro to list the... sortable attributes.
 
@@ -56,8 +70,8 @@ And some sugar for your views:
     
     %table
       %tr
-        = sortable_table_header 'Name', :sort => 'name'
-        = sortable_table_header 'E-mail', :sort => 'email'
+        = sortable_table_header :name => 'Name', :sort => 'name'
+        = sortable_table_header :name => 'E-mail', :sort => 'email'
     
       - @users.each do |each|
         %tr
