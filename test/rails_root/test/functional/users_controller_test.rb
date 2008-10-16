@@ -7,7 +7,7 @@ class UsersControllerTest < ActionController::TestCase
       2.times { |each| Factory :user }
     end
   
-    # should_sort_by :name
+    should_sort_by :name
     should_sort_by :email # Hash syntax
     should_sort_by :age
   end

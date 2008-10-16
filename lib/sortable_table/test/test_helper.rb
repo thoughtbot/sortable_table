@@ -4,26 +4,23 @@ module SortableTable
     
       def self.included(base)
         base.class_eval do
-          include InstanceMethods
           extend ClassMethods
-        end
-      end
-
-      module InstanceMethods
-        def stubbed_action_view
-          view = ActionView::Base.new(@controller.class.view_paths, {}, @controller)
-          yield view
-          ActionView::Base.stubs(:new).returns(view)
         end
       end
     
       module ClassMethods
-        def should_sort_by(attribute, params = {}, &block)
+        def should_sort_by(attribute, &block)
           collection = self.name.underscore.gsub(/_controller_test/, '')
           collection.slice!(0..collection.rindex('/')) if collection.include?('/')
           collection = collection.to_sym
           model_name = collection.to_s.singularize.camelize.constantize
-          block ||= attribute
+          
+          if !block
+            if model_name.columns.select{|c| c.name == attribute.to_s }.first.type == :boolean
+              block = lambda{|x| x.send(attribute).to_s } 
+            end
+            block ||= attribute
+          end
 
           %w(ascending descending).each do |direction|
             should "sort by #{attribute.to_s} #{direction}" do
@@ -31,8 +28,6 @@ module SortableTable
                 "#{model_name}.find(:all) is nil"
 
               get :index, :sort => attribute.to_s, :order => direction
-
-              # controller tests
 
               assert_not_nil assigns(collection), 
                 "assigns(:#{collection}) is nil"
@@ -42,19 +37,9 @@ module SortableTable
               expected = assigns(collection).sort_by(&block)
               expected = expected.reverse if direction == 'descending'
 
-              assert expected == assigns(collection), 
+              assert expected.map(&block) == assigns(collection).map(&block), 
                 "expected - #{expected.map(&block).inspect}," <<
                 " but was - #{assigns(collection).map(&block).inspect}"
-
-              # view tests
-
-              view_helper_error_message = "Include the sortable_table_header" <<
-                " helper in your view with the option :sort => '#{attribute}'"
-
-              assert_select "th" do
-                assert_select "a[href*=?]", "sort=#{attribute.to_s}", 
-                  true, view_helper_error_message
-              end
             end
           end
         end
