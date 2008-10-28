@@ -8,8 +8,9 @@ class UsersControllerTest < ActionController::TestCase
     end
   
     should_sort_by :name
-    should_sort_by :email # Hash syntax
-    should_sort_by :age
+    should_sort_by_attributes :email, :age do |sort, order|
+      get :index, :sort => sort, :order => order
+    end
   end
-  
+
 end

@@ -58,8 +58,30 @@ Time-saving Shoulda macros for your tests:
           end
         end
       
-        should_sort_by :name
-        should_sort_by :email
+        should_sort_by_attributes :name, :email
+      end
+    
+    end
+
+If you need to test an action other than a simple "get :index," you can pass a
+block to #should_sort_by_attributes:
+
+    
+    class SearchesControllerTest < ActionController::TestCase
+    
+      context 'GET to show with id, sort, and order params' do
+        setup do
+          5.times do |each|
+            Factory :user,
+              :name => "name #{each}",
+              :email => "email#{each}@example.com"
+          end
+          @search = Factory(:search, :name => 'name')
+        end
+      
+        should_sort_by_attributes :name, :email do |sort, order|
+          get :show, :id => @search.to_param, :sort => sort, :order => order
+        end
       end
     
     end

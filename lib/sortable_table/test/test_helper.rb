@@ -9,7 +9,7 @@ module SortableTable
       end
     
       module ClassMethods
-        def should_sort_by(attribute, &block)
+        def should_sort_by(attribute, options = {}, &block)
           collection = self.name.underscore.gsub(/_controller_test/, '')
           collection.slice!(0..collection.rindex('/')) if collection.include?('/')
           collection = collection.to_sym
@@ -22,12 +22,16 @@ module SortableTable
             block ||= attribute
           end
 
+          action = options[:action] || lambda do |sort, direction|
+            get :index, :sort => sort, :order => direction
+          end
+
           %w(ascending descending).each do |direction|
             should "sort by #{attribute.to_s} #{direction}" do
               assert_not_nil model_name.find(:all).any?,
                 "#{model_name}.find(:all) is nil"
 
-              get :index, :sort => attribute.to_s, :order => direction
+              action.bind(self).call(attribute.to_s, direction)
 
               assert_not_nil assigns(collection), 
                 "assigns(:#{collection}) is nil"
@@ -41,6 +45,12 @@ module SortableTable
                 "expected - #{expected.map(&block).inspect}," <<
                 " but was - #{assigns(collection).map(&block).inspect}"
             end
+          end
+        end
+
+        def should_sort_by_attributes(*attributes, &block)
+          attributes.each do |attr|
+            should_sort_by attr, :action => block
           end
         end
       end
