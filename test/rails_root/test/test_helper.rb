@@ -4,6 +4,7 @@ require 'test_help'
 require 'rubygems'
 
 require File.expand_path(File.dirname(__FILE__) + '/helper_testcase')
+require File.expand_path(File.dirname(__FILE__) + '/shoulda_macros')
 
 Dir[File.join(RAILS_ROOT, 'test', 'factories', '*.rb')].each do |file|
   require file
@@ -16,7 +17,5 @@ class Test::Unit::TestCase
   
   self.use_transactional_fixtures = true
   self.use_instantiated_fixtures  = false
-
-  include SortableTable::Test::TestHelper
 
 end
