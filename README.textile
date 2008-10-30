@@ -30,22 +30,17 @@ Then, in your index action, pass the sort_order method to your usual
 order parameter for will paginate or named scope call.
 
     class UsersController < Admin::BaseController
-    
       sortable_attributes :name, :email
-      
       def index
         @users = User.paginate :page => params[:page], :order => sort_order
       end
-    
     end
 
 h2. Test with shoulda macros:
 
     context "enough Users to sort" do
-      setup { 5.times { Factory :user } }
-      
+      setup { 5.times { Factory :user } } 
       should_sort_by_attributes :name, :email, :age
-
       context "GET to #index" do
         setup { get :index }
         should_display_sortable_table_header_for :name, :email, :age
@@ -60,7 +55,6 @@ block to #should_sort_by_attributes:
         5.times { Factory :user }
         @search = Factory(:search, :name => 'name')
       end
-      
       should_sort_by_attributes :name, :email do |sort, order|
         get :show, :id => @search.to_param, :sort => sort, :order => order
       end
@@ -69,12 +63,10 @@ block to #should_sort_by_attributes:
 And some sugar for your views:
 
     %h1 Users
-    
     %table
       %tr
         = sortable_table_header :name => 'Name', :sort => 'name'
         = sortable_table_header :name => 'E-mail', :sort => 'email'
-    
       - @users.each do |each|
         %tr
           %td= each.name
