@@ -22,20 +22,6 @@ h2. Conventions
 
 params[:sort] and params[:order]
 
-h2. Examples
-
-Use the sortable_attributes macro to list the... sortable attributes.
-
-Then, in your index action, pass the sort_order method to your usual
-order parameter for will paginate or named scope call.
-
-    class UsersController < Admin::BaseController
-      sortable_attributes :name, :email
-      def index
-        @users = User.paginate :page => params[:page], :order => sort_order
-      end
-    end
-
 h2. Test with shoulda macros:
 
     context "enough Users to sort" do
@@ -60,7 +46,23 @@ block to #should_sort_by_attributes:
       end
     end
 
-And some sugar for your views:
+h2. Controller
+
+Use the sortable_attributes macro to list the... sortable attributes.
+
+Then, in your index action, pass the sort_order method to your usual
+order parameter for will paginate or named scope call.
+
+    class UsersController < Admin::BaseController
+      sortable_attributes :name, :email
+      def index
+        @users = User.paginate :page => params[:page], :order => sort_order
+      end
+    end
+
+h2. View
+
+Add some sugar for your views:
 
     %h1 Users
     %table
