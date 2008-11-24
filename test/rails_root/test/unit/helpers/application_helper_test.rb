@@ -28,6 +28,16 @@ class ApplicationHelperTest < HelperTestCase
         assert @html.include?('<th>')
       end
     end
+    
+    context 'with params[:class]' do
+      setup do
+        @html = sortable_table_header(:name => 'Title', :sort => 'title', :title => 'Sort by title', :class => "hr_class")
+      end
+      
+      should 'return a table header with a class attribute equal to the passed in class' do
+        assert @html.include?('<th class="hr_class"')
+      end
+    end
 
     context "without an :anchor" do
       setup do
