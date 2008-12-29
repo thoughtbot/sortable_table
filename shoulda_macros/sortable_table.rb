@@ -15,18 +15,10 @@ module SortableTable
 
       %w(ascending descending).each do |direction|
         should "sort by #{attribute.to_s} #{direction}" do
-          db_records_exist_for? model_under_test
-
+          db_records_exist_for?(model_under_test) 
           action.bind(self).call(attribute.to_s, direction)
-
-          collection_can_be_tested_for_sorting? collection
-
-          expected = assigns(collection).sort_by(&block)
-          expected = expected.reverse if direction == 'descending'
-
-          assert expected.collect(&block) == assigns(collection).collect(&block), 
-            "expected - #{expected.collect(&block).inspect}," <<
-            " but was - #{assigns(collection).collect(&block).inspect}"
+          collection_can_be_tested_for_sorting?(collection)
+          assert_collection_is_sorted(collection, direction, &block)
         end
       end
     end
@@ -111,6 +103,15 @@ module SortableTable
       assert assigns(collection).size >= 2, 
         "cannot test sorting without at least 2 sortable objects. " <<
         "assigns(:#{collection}) is #{assigns(collection).inspect}"
+    end
+    
+    def assert_collection_is_sorted(collection, direction, &block)
+      expected = assigns(collection).sort_by(&block)
+      expected = expected.reverse if direction == 'descending'
+
+      assert expected.collect(&block) == assigns(collection).collect(&block), 
+        "expected - #{expected.collect(&block).inspect}," <<
+        " but was - #{assigns(collection).collect(&block).inspect}"
     end
   end
 end
