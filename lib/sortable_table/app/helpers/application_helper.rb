@@ -17,10 +17,10 @@ module SortableTable
               link_to(opts[:name], 
                 sortable_url(opts) + anchor, 
                 :title => opts[:title]),
-              :class => full_class_name_for_storable_table_header(opts)
+              :class => full_class_name_for_sortable_table_header(opts)
           end
 
-          def full_class_name_for_storable_table_header(opts)
+          def full_class_name_for_sortable_table_header(opts)
             class_name_array = []
             class_name_array << class_name_for_sortable_table_header_tag(opts) << opts[:class]
             class_name_array.compact.blank? ? nil : class_name_array.compact.join(" ")
