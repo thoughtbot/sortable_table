@@ -1,12 +1,10 @@
 module SortableTable
   module Shoulda
     def should_sort_by(attribute, options = {}, &block)
-      collection = self.name.underscore.gsub(/_controller_test/, '')
-      collection.slice!(0..collection.rindex('/')) if collection.include?('/')
-      collection = collection.to_sym
+      collection = get_collection_name_from_test_name
       model_name = collection.to_s.singularize.camelize.constantize
 
-      if !block
+      unless block
         if model_name.columns.select{|c| c.name == attribute.to_s }.first.type == :boolean
           block = lambda{|x| x.send(attribute).to_s } 
         end
@@ -65,7 +63,20 @@ module SortableTable
           }
         end
       end
-    end 
+    end
+    
+    protected
+    
+    def get_collection_name_from_test_name
+      collection = self.name.underscore.gsub(/_controller_test/, '')
+      collection = remove_namespacing(collection)
+      collection.to_sym
+    end
+    
+    def remove_namespacing(string)
+      string.slice!(0..string.rindex('/')) if string.include?('/')
+      string
+    end
   end
 end
  
