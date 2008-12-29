@@ -10,28 +10,23 @@ module SortableTable
         block ||= attribute
       end
 
-      action = options[:action] || lambda do |sort, direction|
-        get :index, :sort => sort, :order => direction
-      end
+      action = options[:action]
+      action ||= default_sorting_action
 
       %w(ascending descending).each do |direction|
         should "sort by #{attribute.to_s} #{direction}" do
-          assert_not_nil model_under_test.find(:all).any?,
-            "#{model_under_test}.find(:all) is nil"
+          db_records_exist_for? model_under_test
 
           action.bind(self).call(attribute.to_s, direction)
 
-          assert_not_nil assigns(collection), 
-            "assigns(:#{collection}) is nil"
-          assert assigns(collection).size >= 2, 
-            "cannot test sorting without at least 2 sortable objects"
+          collection_can_be_tested_for_sorting? collection
 
           expected = assigns(collection).sort_by(&block)
           expected = expected.reverse if direction == 'descending'
 
-          assert expected.map(&block) == assigns(collection).map(&block), 
-            "expected - #{expected.map(&block).inspect}," <<
-            " but was - #{assigns(collection).map(&block).inspect}"
+          assert expected.collect(&block) == assigns(collection).collect(&block), 
+            "expected - #{expected.collect(&block).inspect}," <<
+            " but was - #{assigns(collection).collect(&block).inspect}"
         end
       end
     end
@@ -82,7 +77,10 @@ module SortableTable
     end
     
     def attribute_is_boolean?(model_under_test, attribute)
-      model_under_test.columns.select { |each| each.name == attribute.to_s }.first.type == :boolean
+      db_column = model_under_test.columns.select { |each| 
+        each.name == attribute.to_s 
+      }.first
+      db_column.type == :boolean
     end
     
     def handle_boolean_attribute(model_under_test, attribute)
@@ -90,9 +88,32 @@ module SortableTable
         lambda { |model_instance| model_instance.send(attribute).to_s } 
       end
     end
+    
+    def default_sorting_action
+      lambda do |sort, direction|
+        get :index, :sort => sort, :order => direction
+      end
+    end
 
+  end
+end
+
+module SortableTable
+  module ShouldaHelpers
+    def db_records_exist_for?(model_under_test)
+      assert_not_nil model_under_test.find(:all).any?,
+        "there must be #{model_under_test} records in the db to test sorting"
+    end
+    
+    def collection_can_be_tested_for_sorting?(collection)
+      assert_not_nil assigns(collection), 
+        "assigns(:#{collection}) is nil"
+      assert assigns(collection).size >= 2, 
+        "cannot test sorting without at least 2 sortable objects. " <<
+        "assigns(:#{collection}) is #{assigns(collection).inspect}"
+    end
   end
 end
  
 Test::Unit::TestCase.extend(SortableTable::Shoulda)
-
+Test::Unit::TestCase.send(:include, SortableTable::ShouldaHelpers)
