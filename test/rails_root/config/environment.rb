@@ -22,5 +22,18 @@ Rails::Initializer.run do |config|
     :session_key => '_rails_root_session',
     :secret      => '6042b566bbfa8e55bdb33a4b3b39b3c373e035c0a87b587a614db4c8bfea19a7adbd49f2098d4c995e37b28f6539e309f4bc5885cf023b47d5fe9d4450be2d46'
   }
+  
+  config.gem 'mocha',
+             :version => '>= 0.9.3'
+  config.gem 'quietbacktrace',
+             :version => '>= 0.1.1'
+  config.gem 'thoughtbot-factory_girl',
+             :lib => 'factory_girl',
+             :source => 'http://gems.github.com',
+             :version => '>= 1.1.5'
+  config.gem 'thoughtbot-shoulda',
+             :lib => 'shoulda',
+             :source => 'http://gems.github.com',
+             :version => '>= 2.0.6'
 
 end
