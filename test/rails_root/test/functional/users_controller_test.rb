@@ -5,7 +5,9 @@ class UsersControllerTest < ActionController::TestCase
   context "enough Users to sort" do
     setup { 2.times { Factory :user } }
 
-    should_sort_by_attributes :name, :email, :age do |sort, order|
+    should_sort_by_attributes(:name, 
+                              :age, 
+                              :email) do |sort, order|
       get :index, :sort => sort, :order => order
     end
 
