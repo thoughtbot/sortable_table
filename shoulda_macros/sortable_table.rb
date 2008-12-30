@@ -4,14 +4,9 @@ module SortableTable
     def should_sort_by(attribute, options = {}, &block)
       collection       = get_collection_name_from_test_name
       model_under_test = get_model_under_test_from_test_name
-
-      unless block
-        block = handle_boolean_attribute(model_under_test, attribute)
-        block ||= attribute
-      end
-
-      action = options[:action]
-      action ||= default_sorting_action
+      
+      block  = block || default_sorting_block(model_under_test, attribute)
+      action = options[:action] || default_sorting_action
 
       %w(ascending descending).each do |direction|
         should "sort by #{attribute.to_s} #{direction}" do
@@ -59,13 +54,24 @@ module SortableTable
       collection.to_sym
     end
     
+    def remove_namespacing(string)
+      string.slice!(0..string.rindex('/')) if string.include?('/')
+      string
+    end
+    
     def get_model_under_test_from_test_name
       self.name.gsub(/ControllerTest/, '').singularize.constantize
     end
     
-    def remove_namespacing(string)
-      string.slice!(0..string.rindex('/')) if string.include?('/')
-      string
+    def default_sorting_block(model_under_test, attribute)
+      block = handle_boolean_attribute(model_under_test, attribute)
+      block ||= attribute
+    end
+    
+    def handle_boolean_attribute(model_under_test, attribute)
+      if attribute_is_boolean?(model_under_test, attribute)
+        lambda { |model_instance| model_instance.send(attribute).to_s } 
+      end
     end
     
     def attribute_is_boolean?(model_under_test, attribute)
@@ -73,12 +79,6 @@ module SortableTable
         each.name == attribute.to_s 
       }.first
       db_column.type == :boolean
-    end
-    
-    def handle_boolean_attribute(model_under_test, attribute)
-      if attribute_is_boolean?(model_under_test, attribute)
-        lambda { |model_instance| model_instance.send(attribute).to_s } 
-      end
     end
     
     def default_sorting_action
