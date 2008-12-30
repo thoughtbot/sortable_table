@@ -20,7 +20,11 @@ module SortableTable
               column    = params[:sort] || 'created_on'
               if params[:sort] && acceptable_columns.include?(column)
                 column = mappings[column.to_sym] || column
-                "#{column} #{direction}"
+                if column.is_a?(Array)
+                  column.map{ |col| "#{col} #{direction}" }.join(',')
+                else
+                  "#{column} #{direction}"
+                end
               else
                 "#{acceptable_columns.first} #{default_sort_direction(default)}"
               end
