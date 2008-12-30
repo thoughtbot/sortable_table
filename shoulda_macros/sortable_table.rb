@@ -10,9 +10,9 @@ module SortableTable
 
       %w(ascending descending).each do |direction|
         should "sort by #{attribute.to_s} #{direction}" do
-          db_records_exist_for?(model_under_test) 
+          assert_db_records_exist_for(model_under_test)
           action.bind(self).call(attribute.to_s, direction)
-          collection_can_be_tested_for_sorting?(collection)
+          assert_collection_can_be_tested_for_sorting(collection)
           assert_collection_is_sorted(collection, direction, &block)
         end
       end
@@ -92,12 +92,12 @@ end
 
 module SortableTable
   module ShouldaHelpers
-    def db_records_exist_for?(model_under_test)
+    def assert_db_records_exist_for(model_under_test)
       assert_not_nil model_under_test.find(:all).any?,
         "there must be #{model_under_test} records in the db to test sorting"
     end
     
-    def collection_can_be_tested_for_sorting?(collection)
+    def assert_collection_can_be_tested_for_sorting(collection)
       assert_not_nil assigns(collection), 
         "assigns(:#{collection}) is nil"
       assert assigns(collection).size >= 2, 
