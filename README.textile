@@ -67,7 +67,7 @@ Add some sugar for your views:
     %h1 Users
     %table
       %tr
-        = sortable_table_header :name => 'Name', :sort => 'name'
+        = sortable_table_header :name => 'Name',   :sort => 'name'
         = sortable_table_header :name => 'E-mail', :sort => 'email'
       - @users.each do |each|
         %tr
