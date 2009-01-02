@@ -13,7 +13,7 @@ module SortableTable
         module ClassMethods
           def sortable_attributes(*args)
             mappings           = pop_hash_from_list(args)
-            acceptable_columns = join_array_and_hash_keys(args, mappings)
+            acceptable_columns = join_array_and_hash_values(args, mappings)
             define_sort_order(acceptable_columns, mappings)
           end
           
@@ -25,9 +25,9 @@ module SortableTable
             end
           end
           
-          def join_array_and_hash_keys(array, hash)
+          def join_array_and_hash_values(array, hash)
             array.collect { |each| each.to_s } + 
-              hash.keys.collect { |each| each.to_s }
+              hash.values.collect { |each| each.to_s }
           end
           
           def define_sort_order(acceptable_columns, mappings)
@@ -36,11 +36,7 @@ module SortableTable
               column    = params[:sort] || 'created_on'
               if params[:sort] && acceptable_columns.include?(column)
                 column = mappings[column.to_sym] || column
-                if column.is_a?(Array)
-                  column.map{ |col| "#{col} #{direction}" }.join(',')
-                else
-                  "#{column} #{direction}"
-                end
+                handle_compound_sorting(column, direction)
               else
                 "#{acceptable_columns.first} #{default_sort_direction(default)}"
               end
@@ -56,7 +52,7 @@ module SortableTable
               when "descending", "asc" then "desc"
               else
                 raise RuntimeError, 
-                  "valid sort orders are 'ascending' & 'descending'"
+                  "valid :default sort orders are 'ascending' & 'descending'"
               end
             else
               "desc"  
@@ -67,6 +63,14 @@ module SortableTable
             object.any? && 
               object.first.is_a?(Hash) && 
               object.first.has_key?(:default)
+          end
+          
+          def handle_compound_sorting(column, direction)
+            if column.is_a?(Array)
+              column.collect { |each| "#{each} #{direction}" }.join(',')
+            else
+              "#{column} #{direction}"
+            end
           end
         end
 

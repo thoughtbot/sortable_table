@@ -21,7 +21,9 @@ class ApplicationHelperTest < HelperTestCase
 
     context 'with no params[:sort] or params[:order]' do
       setup do
-        @html = sortable_table_header(:name => 'Title', :sort => 'title', :title => 'Sort by title')
+        @html = sortable_table_header(:name  => 'Title', 
+                                      :sort  => 'title', 
+                                      :title => 'Sort by title')
       end
 
       should 'return a table header without a class attribute' do
@@ -31,7 +33,10 @@ class ApplicationHelperTest < HelperTestCase
     
     context 'with params[:class]' do
       setup do
-        @html = sortable_table_header(:name => 'Title', :sort => 'title', :title => 'Sort by title', :class => "hr_class")
+        @html = sortable_table_header(:name  => 'Title', 
+                                      :sort  => 'title', 
+                                      :title => 'Sort by title', 
+                                      :class => "hr_class")
       end
       
       should 'return a table header with a class attribute equal to the passed in class' do
@@ -41,7 +46,9 @@ class ApplicationHelperTest < HelperTestCase
 
     context "without an :anchor" do
       setup do
-        @html = sortable_table_header(:name => 'Title', :sort => 'title', :title => 'Sort by title')
+        @html = sortable_table_header(:name  => 'Title', 
+                                      :sort  => 'title', 
+                                      :title => 'Sort by title')
       end
 
       should 'return a link that contains a url with no anchor' do
@@ -51,7 +58,10 @@ class ApplicationHelperTest < HelperTestCase
 
     context "with an :anchor" do
       setup do
-        @html = sortable_table_header(:name => 'Title', :sort => 'title', :title => 'Sort by title', :anchor => 'search-results')
+        @html = sortable_table_header(:name   => 'Title', 
+                                      :sort   => 'title', 
+                                      :title  => 'Sort by title', 
+                                      :anchor => 'search-results')
       end
 
       should 'return a link that contains a url with that anchor' do

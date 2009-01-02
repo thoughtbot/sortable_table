@@ -12,13 +12,18 @@ class UsersControllerTest < ActionController::TestCase
       Factory(:user, :age => 30)
     end
 
-    should_sort_by_attributes :name, :email, :age do |sort, order|
-      get :index, :sort => sort, :order => order
-    end
+    should_sort_by_attributes :name, :email, :age
 
-    should_sort_by :name_and_email, {} do |user|
-      "#{user.name} #{user.email}"
-    end
+    should_sort_by "groups.name"
+
+    # test block form    
+    # should_sort_by_attributes :age do |sort, order|
+    #   get :index, :sort => sort, :order => order
+    # end
+
+    # should_sort_by :name_and_email, {} do |user|
+    #   "#{user.name} #{user.email}"
+    # end
 
     context 'with a non-standard instance variable name' do
       should_sort_by :name, { :collection => 'users_dupe', :model_name => 'user' } do |user|

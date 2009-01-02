@@ -2935,3 +2935,24 @@ Migrating to UserBelongsToGroup (20081229222354)
   [4;35;1mSQL (1.0ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20081229222354')[0m
   [4;36;1mSQL (1.1ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20080819225020')[0m
   [4;35;1mSQL (1.0ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20081229222312')[0m
+  [4;36;1mSQL (1.2ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.7ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateUsers (20080819225020)
+Migrating to CreateGroups (20081229222312)
+Migrating to UserBelongsToGroup (20081229222354)
+  [4;36;1mSQL (14.0ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.7ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.4ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_list("groups")[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mPRAGMA index_list("users")[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mPRAGMA index_info('index_users_on_group_id')[0m
