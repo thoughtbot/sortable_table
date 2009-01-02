@@ -55,25 +55,25 @@ If the index action is rendered without a params[:sort] option, @users will be s
 
 h2. View
 
-   <h1>Users</h1>
-   
-   <table>
-     <tr>
-       <%= sortable_table_header :name => "Name",  :sort => "name" %>
-       <%= sortable_table_header :name => "Email", :sort => "email" %>
-       <%= sortable_table_header :name => "Age",   :sort => "age" %>
-       <%= sortable_table_header :name => "Group", :sort => "group" %>
-     </tr>
-   
-     <% @users.each do |user| %>
+   <pre><code>
+     <h1>Users</h1>
+     <table>
        <tr>
-         <td><%= html_escape(user.name) %></td>
-         <td><%= html_escape(user.email) %></td>
-         <td><%= html_escape(user.age) %></td>
-         <td><%= html_escape(user.group.name) %></td>
+         <%= sortable_table_header :name => "Name",  :sort => "name" %>
+         <%= sortable_table_header :name => "Email", :sort => "email" %>
+         <%= sortable_table_header :name => "Age",   :sort => "age" %>
+         <%= sortable_table_header :name => "Group", :sort => "group" %>
        </tr>
-     <% end %>
-   </table>
+       <% @users.each do |user| %>
+         <tr>
+           <td><%= html_escape(user.name) %></td>
+           <td><%= html_escape(user.email) %></td>
+           <td><%= html_escape(user.age) %></td>
+           <td><%= html_escape(user.group.name) %></td>
+         </tr>
+       <% end %>
+     </table>
+   </code></pre>
 
 sortable_table_header creates a table header containing a link with the correct :sort and :order params. It also has a class of "ascending" or "descending" so you can add styles with arrows.
 
@@ -131,6 +131,6 @@ The default sort order is descending. This applies to the first time you click o
 Authors
 -------
 
-Dan Croak, Joe Ferris, and Boston.rb.
+Dan Croak, Joe Ferris, Jason Morrison and Boston.rb.
 
 Copyright (c) 2008 Dan Croak, released under the MIT license
