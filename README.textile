@@ -20,19 +20,21 @@ In app/helpers/application_helper.rb:
 
 h2. Testing
 
-    context "enough Users to sort" do
-      setup do 
-        5.times { Factory :user }
-      end
-
-      should_sort_by_attributes :name, :email, :age, :group => "groups.name"
-
-      context "GET to #index" do
-        setup { get :index }
-
-        should_display_sortable_table_header_for :name, :email, :age, :group
-      end
+<pre><code>
+  context "enough Users to sort" do
+    setup do 
+      5.times { Factory :user }
     end
+
+    should_sort_by_attributes :name, :email, :age, :group => "groups.name"
+
+    context "GET to #index" do
+      setup { get :index }
+
+      should_display_sortable_table_header_for :name, :email, :age, :group
+    end
+  end
+</code></pre>
 
 This is the common case for a RESTful UsersController.
 
@@ -41,13 +43,15 @@ This is the common case for a RESTful UsersController.
 
 h2. Controller
 
-    class UsersController < Admin::BaseController
-      sortable_attributes :name, :email, :age, :group => "groups.name"
+<pre><code>
+  class UsersController < Admin::BaseController
+    sortable_attributes :name, :email, :age, :group => "groups.name"
 
-      def index
-        @users = User.paginate :page => params[:page], :order => sort_order
-      end
+    def index
+      @users = User.paginate :page => params[:page], :order => sort_order
     end
+  end
+</code></pre>
 
 sortable_attributes defines a sort_order method that gets called in your action.
 
