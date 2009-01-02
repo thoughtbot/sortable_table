@@ -11,11 +11,8 @@ module SortableTable
       %w(ascending descending).each do |direction|
         should "sort by #{attribute.to_s} #{direction}" do
           assert_db_records_exist_for(model_under_test) # sanity check
-          
           action.bind(self).call(attribute.to_s, direction) # controller action
-          
           assert_collection_can_be_tested_for_sorting(collection) # sanity check
-          
           assert_collection_is_sorted(collection, direction, &block) # test
         end
       end

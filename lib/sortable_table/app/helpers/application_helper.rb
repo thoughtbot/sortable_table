@@ -17,16 +17,17 @@ module SortableTable
               link_to(opts[:name], 
                 sortable_url(opts) + anchor, 
                 :title => opts[:title]),
-              :class => full_class_name_for_sortable_table_header(opts)
+              :class => sortable_table_header_classes(opts)
           end
 
-          def full_class_name_for_sortable_table_header(opts)
-            class_name_array = []
-            class_name_array << class_name_for_sortable_table_header_tag(opts) << opts[:class]
-            class_name_array.compact.blank? ? nil : class_name_array.compact.join(" ")
+          def sortable_table_header_classes(opts)
+            class_names = []
+            class_names << sortable_table_header_class(opts) 
+            class_names << opts[:class]
+            class_names.compact.blank? ? nil : class_names.compact.join(" ")
           end
           
-          def class_name_for_sortable_table_header_tag(opts)
+          def sortable_table_header_class(opts)
             if default_sort_to_most_recent? opts
               'descending'
             elsif re_sort? opts

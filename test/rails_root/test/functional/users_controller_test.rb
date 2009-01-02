@@ -4,36 +4,31 @@ class UsersControllerTest < ActionController::TestCase
 
   context "enough Users to sort" do
     setup do
-      Factory(:user, :name  => "a")
-      Factory(:user, :name  => "b")
-      Factory(:user, :email => "a@a.com")
-      Factory(:user, :email => "b@b.com")
-      Factory(:user, :age => 20)
-      Factory(:user, :age => 30)
+      5.times { Factory :user }
     end
 
-    should_sort_by_attributes :name, :email
+    should_sort_by_attributes :name, :email, :group => "groups.name"
 
-    should_sort_by "groups.name"
-    should_sort_by :group => "groups.name"
-
-    # block form    
+    # block form to test an action other than :index
     should_sort_by_attributes :age do |sort, order|
-      get :index, :sort => sort, :order => order
+      get :show, :sort => sort, :order => order
     end
 
     # TODO:
     # should_sort_by :age_and_name => ["age", "users.name"]
 
-    context "with a non-standard instance variable name" do
-      should_sort_by :name, { :collection => "users_dupe", :model_name => "user" } do |user|
+    context "with a non-standard collection name" do
+      action = lambda { |sort, order| get :members, :sort => sort, :order => order }
+      should_sort_by :name, { :collection => "members", 
+                              :model_name => "user",
+                              :action     => action } do |user|
         user.name
       end
     end
     
     context "GET to #index" do
       setup { get :index }
-      should_display_sortable_table_header_for :name, :email, :age
+      should_display_sortable_table_header_for :name, :email, :age, :group
     end
   end
 

@@ -33,7 +33,7 @@ module SortableTable
           def define_sort_order(acceptable_columns, mappings)
             define_method(:sort_order) do |*default| 
               direction = params[:order] == 'ascending' ? 'asc' : 'desc'
-              column    = params[:sort] || 'created_on'
+              column    = params[:sort] || acceptable_columns.first
               if params[:sort] && acceptable_columns.include?(column)
                 column = mappings[column.to_sym] || column
                 handle_compound_sorting(column, direction)
