@@ -4,10 +4,10 @@ class UsersController < ApplicationController
                       :age,
                       :email,
                       :group => "groups.name",
-                      :name_and_email => ['name', 'users.email']
+                      :age_and_name => ["age", "users.name"]
 
   def index
-    @users = User.find :all, :order => sort_order("ascending")
+    @users      = User.find :all, :order => sort_order("ascending")
     @users_dupe = @users
   end
 
