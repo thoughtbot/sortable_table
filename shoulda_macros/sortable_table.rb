@@ -2,9 +2,9 @@ module SortableTable
   module Shoulda
 
     def should_sort_by(attribute, options = {}, &block)
-      collection       = get_collection_name_from_test_name
-      model_under_test = get_model_under_test_from_test_name
-      
+      collection       = get_collection_name_from_test_name(options[:collection])
+      model_under_test = get_model_under_test_from_test_name(options[:model_name])
+
       block  = block || default_sorting_block(model_under_test, attribute)
       action = options[:action] || default_sorting_action
 
@@ -48,19 +48,20 @@ module SortableTable
     
     protected
     
-    def get_collection_name_from_test_name
+    def get_collection_name_from_test_name(override)
       collection = self.name.underscore.gsub(/_controller_test/, '')
       collection = remove_namespacing(collection)
-      collection.to_sym
+      (override || collection).to_sym
     end
-    
+
+    def get_model_under_test_from_test_name(override)
+      model_name = self.name.gsub(/ControllerTest/, '')
+      (override || model_name).singularize.constantize
+    end
+
     def remove_namespacing(string)
       string.slice!(0..string.rindex('/')) if string.include?('/')
       string
-    end
-    
-    def get_model_under_test_from_test_name
-      self.name.gsub(/ControllerTest/, '').singularize.constantize
     end
     
     def default_sorting_block(model_under_test, attribute)

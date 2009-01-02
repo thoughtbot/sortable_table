@@ -14,7 +14,6 @@ module SortableTable
           def sortable_attributes(*args)
             mappings           = pop_hash_from_list(args)
             acceptable_columns = join_array_and_hash_keys(args, mappings)
-            
             define_sort_order(acceptable_columns, mappings)
           end
           
@@ -37,7 +36,11 @@ module SortableTable
               column    = params[:sort] || 'created_on'
               if params[:sort] && acceptable_columns.include?(column)
                 column = mappings[column.to_sym] || column
-                "#{column} #{direction}"
+                if column.is_a?(Array)
+                  column.map{ |col| "#{col} #{direction}" }.join(',')
+                else
+                  "#{column} #{direction}"
+                end
               else
                 "#{acceptable_columns.first} #{default_sort_direction(default)}"
               end
