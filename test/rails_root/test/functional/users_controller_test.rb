@@ -12,14 +12,15 @@ class UsersControllerTest < ActionController::TestCase
       Factory(:user, :age => 30)
     end
 
-    should_sort_by_attributes :name, :email, :age
+    should_sort_by_attributes :name, :email
 
     should_sort_by "groups.name"
+    should_sort_by :group => "groups.name"
 
-    # test block form    
-    # should_sort_by_attributes :age do |sort, order|
-    #   get :index, :sort => sort, :order => order
-    # end
+    # block form    
+    should_sort_by_attributes :age do |sort, order|
+      get :index, :sort => sort, :order => order
+    end
 
     # should_sort_by :name_and_email, {} do |user|
     #   "#{user.name} #{user.email}"

@@ -66,7 +66,7 @@ module SortableTable
         model_name = override
       else
         model_name = if attribute_includes_table?(attribute) 
-          get_model_from_sql_string(attribute)
+          get_model_from_attribute(attribute)
         else
           get_model_under_test_from_test_name
         end
@@ -82,8 +82,12 @@ module SortableTable
       attribute.to_s.include?(".")
     end
     
-    def get_model_from_sql_string(string)
-      string.split(".").first
+    def get_model_from_attribute(attribute)
+      if attribute.is_a?(Hash)
+        attribute.values.first.split(".").first
+      else
+        attribute.split(".").first
+      end
     end
 
     def remove_namespacing(string)
