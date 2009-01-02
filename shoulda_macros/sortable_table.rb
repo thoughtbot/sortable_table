@@ -56,7 +56,7 @@ module SortableTable
 
     def get_model_under_test_from_test_name(override)
       model_name = self.name.gsub(/ControllerTest/, '')
-      (override || model_name).singularize.constantize
+      (override || model_name).singularize.camelize.constantize
     end
 
     def remove_namespacing(string)
