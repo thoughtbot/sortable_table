@@ -62,7 +62,7 @@ module SortableTable
       if override
         model_name = override
       else
-        model_name = if attribute_includes_table?(attribute) 
+        model_name = if attribute_includes_table?(attribute)
           get_model_from_attribute(attribute)
         else
           get_model_under_test_from_test_name
@@ -72,7 +72,8 @@ module SortableTable
     end
     
     def get_model_under_test_from_test_name
-      model_name = self.name.gsub(/ControllerTest/, '')
+      model_name_from_test_name = self.name.gsub(/ControllerTest/, '')
+      remove_namespacing(model_name_from_test_name)
     end
     
     def attribute_includes_table?(attribute)
@@ -88,7 +89,12 @@ module SortableTable
     end
 
     def remove_namespacing(string)
-      string.slice!(0..string.rindex('/')) if string.include?('/')
+      while string.include?('/')
+        string.slice!(0..string.rindex('/')) 
+      end
+      while string.include?('::')
+        string.slice!(0..string.rindex('::')+1) 
+      end
       string
     end
     

@@ -79,7 +79,7 @@ h2. View
   </table>
 </code></pre>
 
-sortable_table_header creates a table header containing a link with the correct :sort and :order params. It also has a class of "ascending" or "descending" so you can add styles with arrows.
+sortable_table_header creates a table header containing a link with the correct :sort and :order params. It also has a class of "ascending" or "descending" so you can add styles with arrows. You can add your own styles as well.
 
 h2. Example styles
 
