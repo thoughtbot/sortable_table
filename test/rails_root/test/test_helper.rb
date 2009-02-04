@@ -5,6 +5,7 @@ require 'rubygems'
 
 require File.expand_path(File.dirname(__FILE__) + '/helper_testcase')
 require File.expand_path(File.dirname(__FILE__) + '/shoulda_macros')
+require File.expand_path(File.dirname(__FILE__) + '/fail_macros')
 
 Dir[File.join(RAILS_ROOT, 'test', 'factories', '*.rb')].each do |file|
   require file
@@ -19,3 +20,4 @@ class Test::Unit::TestCase
   self.use_instantiated_fixtures  = false
 
 end
+

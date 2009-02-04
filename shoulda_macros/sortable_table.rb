@@ -10,10 +10,18 @@ module SortableTable
 
       %w(ascending descending).each do |direction|
         should "sort by #{attribute.to_s} #{direction}" do
-          assert_db_records_exist_for(model_under_test) # sanity check
-          action.bind(self).call(attribute.to_s, direction) # controller action
-          assert_collection_can_be_tested_for_sorting(collection) # sanity check
-          assert_collection_is_sorted(collection, direction, &block) # test
+          # sanity checks
+          assert_attribute_defined(attribute, model_under_test)
+          assert_db_records_exist_for(model_under_test)
+
+          # exercise
+          action.bind(self).call(attribute.to_s, direction)
+
+          # sanity check
+          assert_collection_can_be_tested_for_sorting(collection, attribute)
+
+          # verification
+          assert_collection_is_sorted(collection, direction, &block)
         end
       end
     end
@@ -100,7 +108,7 @@ module SortableTable
     
     def default_sorting_block(model_under_test, attribute)
       block = handle_boolean_attribute(model_under_test, attribute)
-      block ||= lambda { attribute.to_s }
+      block ||= lambda { |model_instance| model_instance.send(attribute) } 
     end
     
     def handle_boolean_attribute(model_under_test, attribute)
@@ -111,7 +119,7 @@ module SortableTable
     
     def attribute_is_boolean?(model_under_test, attribute)
       db_column = model_under_test.columns.select { |each| each.name == attribute.to_s }.first
-      db_column.type == :boolean
+      db_column && db_column.type == :boolean
     end
     
     def default_sorting_action
@@ -119,23 +127,26 @@ module SortableTable
         get :index, :sort => sort, :order => direction
       end
     end
-
   end
 end
 
 module SortableTable
   module ShouldaHelpers
     def assert_db_records_exist_for(model_under_test)
-      assert_not_nil model_under_test.find(:all).any?,
-        "there must be #{model_under_test} records in the db to test sorting"
+      assert model_under_test.count >= 2,
+        "need at least 2 #{model_under_test} records in the db to test sorting"
     end
     
-    def assert_collection_can_be_tested_for_sorting(collection)
+    def assert_collection_can_be_tested_for_sorting(collection, attribute)
       assert_not_nil assigns(collection), 
         "assigns(:#{collection}) is nil"
       assert assigns(collection).size >= 2, 
         "cannot test sorting without at least 2 sortable objects. " <<
         "assigns(:#{collection}) is #{assigns(collection).inspect}"
+      values = assigns(collection).collect(&attribute).uniq
+      assert values.size >= 2,
+             "need at least 2 distinct #{attribute} values to test sorting\n" <<
+             "found values: #{values.inspect}"
     end
     
     def assert_collection_is_sorted(collection, direction, &block)
@@ -145,6 +156,13 @@ module SortableTable
       assert expected.collect(&block) == assigns(collection).collect(&block), 
         "expected - #{expected.collect(&block).inspect}," <<
         " but was - #{assigns(collection).collect(&block).inspect}"
+    end
+
+    def assert_attribute_defined(attribute, model_under_test)
+      column = model_under_test.
+        columns.
+        detect {|column| column.name == attribute.to_s }
+      assert_not_nil column, "No such column: #{model_under_test}##{attribute}"
     end
   end
 end
