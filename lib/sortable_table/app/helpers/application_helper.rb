@@ -30,11 +30,17 @@ module SortableTable
           def sortable_table_header_class(opts)
             if default_sort_to_most_recent? opts
               'descending'
+            elsif sorting_default? opts
+              'ascending'
             elsif re_sort? opts
               params[:order]
             else
               nil
             end
+          end
+
+          def sorting_default?(opts)
+            params[:sort].nil? && opts[:sort] == default_sort_column
           end
           
           def default_sort_to_most_recent?(opts)

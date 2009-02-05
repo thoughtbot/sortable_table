@@ -53,6 +53,12 @@ module SortableTable
         end
       end
     end
+
+    def should_display_highlighted_sortable_table_header_for column, order = "ascending"
+      should "have the #{order} class on the #{column} table header" do
+        assert_select 'a[href*=?][class*=?]', "sort=#{column}", order
+      end
+    end
     
     protected
     

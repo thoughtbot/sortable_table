@@ -31,9 +31,13 @@ module SortableTable
           end
           
           def define_sort_order(acceptable_columns, mappings)
+            define_method(:default_sort_column) do
+              acceptable_columns.first
+            end
+
             define_method(:sort_order) do |*default| 
               direction = params[:order] == 'ascending' ? 'asc' : 'desc'
-              column    = params[:sort] || acceptable_columns.first
+              column    = params[:sort] || default_sort_column
               if params[:sort] && acceptable_columns.include?(column)
                 column = mappings[column.to_sym] || column
                 handle_compound_sorting(column, direction)
@@ -41,6 +45,8 @@ module SortableTable
                 "#{acceptable_columns.first} #{default_sort_direction(default)}"
               end
             end
+
+            helper_method :sort_order, :default_sort_column
           end
         end
         
@@ -49,7 +55,7 @@ module SortableTable
             if hash_with_default_key?(default)
               case default.first[:default]
               when "ascending",  "asc" then "asc"
-              when "descending", "asc" then "desc"
+              when "descending", "desc" then "desc"
               else
                 raise RuntimeError, 
                   "valid :default sort orders are 'ascending' & 'descending'"

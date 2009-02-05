@@ -6,6 +6,7 @@ class ApplicationHelperTest < HelperTestCase
   
   context 'sortable_table_header' do
     setup do
+      self.stubs(:default_sort_column).returns(:title)
       self.stubs(:params).returns({ :controller => :jobs, :action => :index, :sort => nil, :order => nil })
     end
 
