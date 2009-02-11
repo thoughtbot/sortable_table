@@ -6,7 +6,8 @@ class ApplicationHelperTest < HelperTestCase
   
   context 'sortable_table_header' do
     setup do
-      self.stubs(:default_sort_column).returns(:title)
+      self.stubs(:default_sort_column).returns(:not_title)
+      self.stubs(:sortable_table_direction).returns("ascending")
       self.stubs(:params).returns({ :controller => :jobs, :action => :index, :sort => nil, :order => nil })
     end
 
@@ -67,6 +68,23 @@ class ApplicationHelperTest < HelperTestCase
 
       should 'return a link that contains a url with that anchor' do
         assert @html.match(/href="[^"]*?#search-results"/)
+      end
+    end
+
+    %w( ascending descending ).each do |direction|
+      context "as the default column with no options specified and a default of #{direction}" do
+        setup do
+          self.stubs(:default_sort_column).returns('title')
+          self.stubs(:sortable_table_direction).returns(direction)
+          @html = sortable_table_header(:name   => 'Title', 
+                                        :sort   => 'title', 
+                                        :title  => 'Sort by title', 
+                                        :anchor => 'search-results')
+        end
+
+        should "return a header with an #{direction} class" do
+          assert @html.match(/<th class="#{direction}">/)
+        end
       end
     end
   end

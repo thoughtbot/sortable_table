@@ -28,23 +28,13 @@ module SortableTable
           end
           
           def sortable_table_header_class(opts)
-            if default_sort_to_most_recent? opts
-              'descending'
-            elsif sorting_default? opts
-              'ascending'
-            elsif re_sort? opts
-              params[:order]
-            else
-              nil
+            if re_sort?(opts) || sorting_default?(opts)
+              sortable_table_direction
             end
           end
 
           def sorting_default?(opts)
             params[:sort].nil? && opts[:sort] == default_sort_column
-          end
-          
-          def default_sort_to_most_recent?(opts)
-            params[:sort].nil? && opts[:sort] == 'date'
           end
           
           def re_sort?(opts)
@@ -60,12 +50,10 @@ module SortableTable
           end
           
           def link_sort_order(opts)
-            if default_sort_to_most_recent? opts
-              'ascending'
-            elsif re_sort? opts
+            if re_sort? opts
               reverse_order params[:order]
             else
-              'ascending'
+              reverse_order sortable_table_direction
             end
           end
         end
