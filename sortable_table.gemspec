@@ -1,17 +1,18 @@
 --- !ruby/object:Gem::Specification 
 name: sortable_table
 version: !ruby/object:Gem::Version 
-  version: 0.0.4
+  version: 0.0.5
 platform: ruby
 authors: 
 - Dan Croak
 - Joe Ferris
+- Jon Yurek
 - Boston.rb
 autorequire: 
 bindir: bin
 cert_chain: []
 
-date: 2009-01-02 00:00:00 -05:00
+date: 2009-02-27 00:00:00 -05:00
 default_executable: 
 dependencies: []
 
