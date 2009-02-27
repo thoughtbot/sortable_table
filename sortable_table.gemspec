@@ -1,7 +1,7 @@
 --- !ruby/object:Gem::Specification 
 name: sortable_table
 version: !ruby/object:Gem::Version 
-  version: 0.0.5
+  version: 0.0.6
 platform: ruby
 authors: 
 - Dan Croak

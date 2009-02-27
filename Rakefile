@@ -13,7 +13,7 @@ desc "Run the test suite"
 task :default => :test
 
 spec = Gem::Specification.new do |s|
-  s.version = '0.0.5'
+  s.version = '0.0.6'
   s.name = "sortable_table"
   s.summary = "Sort HTML tables in a Rails app."
   s.email = "dcroak@thoughtbot.com"
