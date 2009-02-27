@@ -25,7 +25,8 @@ Rails::Initializer.run do |config|
   
   config.gem 'mocha',
              :version => '>= 0.9.3'
-  config.gem 'quietbacktrace',
+  config.gem 'thoughtbot-quietbacktrace',
+             :lib => 'quietbacktrace',
              :version => '>= 0.1.1'
   config.gem 'thoughtbot-factory_girl',
              :lib => 'factory_girl',

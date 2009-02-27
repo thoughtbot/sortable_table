@@ -4,13 +4,13 @@ class UsersController < ApplicationController
                       :age_and_name => ["age", "users.name"]
 
   def index
-    @users = User.find :all, :order => sort_order("ascending")
+    @users = User.find :all, :include => :group, :order => sort_order("ascending")
   end
-  
+
   def show
     @users = User.find :all, :order => sort_order
   end
-  
+
   def members
     @members = User.find :all, :order => sort_order
   end

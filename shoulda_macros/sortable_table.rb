@@ -1,12 +1,36 @@
 module SortableTable
   module Shoulda
 
+    class Attribute
+      def initialize(attr)
+        @attr = attr
+      end
+
+      def complex?
+        @attr.is_a?(Hash)
+      end
+
+      def name
+        complex? ? @attr.keys.first : @attr
+      end
+
+      def values
+        @attr.values.flatten
+      end
+
+      def to_s
+        name.to_s
+      end
+    end
+
     def should_sort_by(attribute, options = {}, &block)
       collection       = get_collection_name(options[:collection])
       model_under_test = get_model_under_test(attribute, options[:model_name])
 
       block  = block || default_sorting_block(model_under_test, attribute)
       action = options[:action] || default_sorting_action
+
+      attribute = Attribute.new(attribute)
 
       %w(ascending descending).each do |direction|
         should "sort by #{attribute.to_s} #{direction}" do
@@ -15,10 +39,10 @@ module SortableTable
           assert_db_records_exist_for(model_under_test)
 
           # exercise
-          action.bind(self).call(attribute.to_s, direction)
+          action.bind(self).call(attribute.name.to_s, direction)
 
           # sanity check
-          assert_collection_can_be_tested_for_sorting(collection, attribute)
+          assert_collection_can_be_tested_for_sorting(collection, attribute, &block)
 
           # verification
           assert_collection_is_sorted(collection, direction, &block)
@@ -75,33 +99,13 @@ module SortableTable
     end
 
     def get_model_under_test(attribute, override)
-      if override
-        model_name = override
-      else
-        model_name = if attribute_includes_table?(attribute)
-          get_model_from_attribute(attribute)
-        else
-          get_model_under_test_from_test_name
-        end
-      end
-      model_name.singularize.camelize.constantize
+      model_name = override || get_model_under_test_from_test_name
+      model_name.classify.constantize
     end
     
     def get_model_under_test_from_test_name
       model_name_from_test_name = self.name.gsub(/ControllerTest/, '')
       remove_namespacing(model_name_from_test_name)
-    end
-    
-    def attribute_includes_table?(attribute)
-      attribute.to_s.include?(".")
-    end
-    
-    def get_model_from_attribute(attribute)
-      if attribute.is_a?(Hash)
-        attribute.values.first.split(".").first
-      else
-        attribute.split(".").first
-      end
     end
 
     def remove_namespacing(string)
@@ -145,15 +149,15 @@ module SortableTable
         "need at least 2 #{model_under_test} records in the db to test sorting"
     end
     
-    def assert_collection_can_be_tested_for_sorting(collection, attribute)
+    def assert_collection_can_be_tested_for_sorting(collection, attribute, &block)
       assert_not_nil assigns(collection), 
         "assigns(:#{collection}) is nil"
       assert assigns(collection).size >= 2, 
         "cannot test sorting without at least 2 sortable objects. " <<
         "assigns(:#{collection}) is #{assigns(collection).inspect}"
-      values = assigns(collection).collect(&attribute).uniq
+      values = assigns(collection).collect(&block).uniq
       assert values.size >= 2,
-             "need at least 2 distinct #{attribute} values to test sorting\n" <<
+             "need at least 2 distinct #{attribute.name} values to test sorting\n" <<
              "found values: #{values.inspect}"
     end
     
@@ -167,10 +171,26 @@ module SortableTable
     end
 
     def assert_attribute_defined(attribute, model_under_test)
-      column = model_under_test.
+      if attribute.complex?
+        attribute.values.each do |attr|
+          if attr.include?('.')
+            model, attr = attr.split('.')
+            model = model.classify.constantize
+            assert_db_column_exists(attr, model)
+          else
+            assert_db_column_exists(attr, model_under_test)
+          end
+        end
+      else
+        assert_db_column_exists(attribute, model_under_test)
+      end
+    end
+
+    def assert_db_column_exists(attribute, model)
+      column = model.
         columns.
         detect {|column| column.name == attribute.to_s }
-      assert_not_nil column, "No such column: #{model_under_test}##{attribute}"
+      assert_not_nil column, "No such column: #{model}##{attribute}"
     end
   end
 end

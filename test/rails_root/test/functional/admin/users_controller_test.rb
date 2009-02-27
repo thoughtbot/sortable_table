@@ -9,8 +9,13 @@ class Admin::UsersControllerTest < ActionController::TestCase
 
     should_sort_by_attributes :name, :email
 
-    # TODO: this was unimplemented
-    # should_sort_by_attributes :group => "groups.name"
+    should_sort_by :group => 'groups.name' do |user|
+      user.group.name
+    end
+
+    should_sort_by :age_and_name => ["age", "users.name"] do |user|
+      "#{user.age}#{user.name}"
+    end
 
     context "GET to #index" do
       setup { get :index }
@@ -19,4 +24,3 @@ class Admin::UsersControllerTest < ActionController::TestCase
   end
 
 end
-

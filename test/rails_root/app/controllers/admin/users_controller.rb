@@ -4,7 +4,7 @@ class Admin::UsersController < ApplicationController
                       :age_and_name => ["age", "users.name"]
 
   def index
-    @users = User.find :all, :order => sort_order
+    @users = User.find :all, :include => :group, :order => sort_order
   end
 
 end

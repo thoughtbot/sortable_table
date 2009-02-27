@@ -14,16 +14,18 @@ class UsersControllerTest < ActionController::TestCase
 
     should_sort_by_attributes :name, :admin
 
-    # TODO: this was unimplemented
-    # should_sort_by_attributes :group => "groups.name"
-
-    # block form to test an action other than :index
-    should_sort_by_attributes :age do |sort, order|
-      get :show, :sort => sort, :order => order
+    should_sort_by :group => 'groups.name' do |user|
+      user.group.name
     end
 
-    # TODO:
-    # should_sort_by :age_and_name => ["age", "users.name"]
+    should_sort_by :age_and_name => ["age", "users.name"] do |user|
+      "#{user.age}#{user.name}"
+    end
+
+    # block form to test an action other than :index
+    should_sort_by_attributes :email do |sort, order|
+      get :show, :sort => sort, :order => order
+    end
 
     context "with a non-standard collection name" do
       action = lambda { |sort, order| get :members, :sort => sort, :order => order }
@@ -78,4 +80,3 @@ class UsersControllerTest < ActionController::TestCase
   end
 
 end
-

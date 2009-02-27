@@ -17,7 +17,7 @@ module SortableTable
             define_sort_order(acceptable_columns, mappings)
           end
           
-          def pop_hash_from_list(*args)
+          def pop_hash_from_list(args)
             if args.last.is_a?(Hash)
               args.pop
             else
@@ -27,7 +27,7 @@ module SortableTable
           
           def join_array_and_hash_values(array, hash)
             array.collect { |each| each.to_s } + 
-              hash.values.collect { |each| each.to_s }
+              hash.keys.collect { |each| each.to_s }
           end
           
           def define_sort_order(acceptable_columns, mappings)
@@ -89,7 +89,5 @@ module SortableTable
 
       end
     end
-  end  
+  end
 end
-
-
