@@ -1,3 +1,8 @@
+DEPRECATED
+==========
+
+Thoughtbot is no longer supporting this project. We have not used it a long time. If you would like to maintain it, please email dan@thoughtbot.com.
+
 Sortable Table
 ==============
 
